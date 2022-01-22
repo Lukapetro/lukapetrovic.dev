@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 const ExternalLink = ({ href, children }) => (
   <a
@@ -23,11 +23,6 @@ export default function Footer() {
           <Link href="/about">
             <a className="text-gray-500 hover:text-gray-600 transition">
               About
-            </a>
-          </Link>
-          <Link href="/newsletter">
-            <a className="text-gray-500 hover:text-gray-600 transition">
-              Newsletter
             </a>
           </Link>
         </div>
