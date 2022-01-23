@@ -25,6 +25,12 @@ export default function Footer() {
               About
             </a>
           </Link>
+
+          <Link href="/travel-timeline">
+            <a className="text-gray-500 hover:text-gray-600 transition">
+              Travels
+            </a>
+          </Link>
         </div>
         <div className="flex flex-col space-y-4">
           <ExternalLink href="https://www.linkedin.com/in/lucapetro/">
@@ -33,6 +39,11 @@ export default function Footer() {
           <ExternalLink href="https://github.com/Lukapetro">
             GitHub
           </ExternalLink>
+          <Link href="/privacy">
+            <a className="text-gray-500 hover:text-gray-600 transition">
+              Privacy
+            </a>
+          </Link>
         </div>
         <div className="flex flex-col space-y-4">
           <Link href="/projects">
@@ -40,9 +51,12 @@ export default function Footer() {
               Progetti
             </a>
           </Link>
-          <Link href="/snippets">
+          <Link href="/blog">
+            <a className="text-gray-500 hover:text-gray-600 transition">Blog</a>
+          </Link>
+          <Link href="/changelog">
             <a className="text-gray-500 hover:text-gray-600 transition">
-              Snippets
+              Changelog
             </a>
           </Link>
         </div>
