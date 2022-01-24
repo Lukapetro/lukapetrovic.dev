@@ -1,7 +1,7 @@
 import BlogPost from 'components/BlogPost';
 import Container from 'components/Container';
 import { allBlogs } from '.contentlayer/data';
-import { pick } from '@contentlayer/client';
+import { pick } from 'contentlayer/client';
 
 export default function Blog({ posts }) {
   return (
@@ -22,7 +22,6 @@ export default function Blog({ posts }) {
   );
 }
 
-// Statically fetch all posts
 export async function getStaticProps() {
   const posts = allBlogs.map((post) =>
     pick(post, ['slug', 'title', 'summary', 'publishedAt'])

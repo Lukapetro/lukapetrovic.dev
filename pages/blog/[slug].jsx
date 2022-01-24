@@ -1,18 +1,16 @@
 import BlogLayout from 'layouts/blog';
-import { allBlogs } from '.contentlayer/data';
-//import components from 'components/MDXComponents';
-import { useMDXComponent } from 'next-contentlayer/hooks';
+import components from 'components/MDXComponents';
 
 export default function Post({ post }) {
   const Component = useMDXComponent(post.body.code);
 
   return (
     <BlogLayout post={post}>
-      {/* <Component
+      <Component
         components={{
           ...components
         }}
-      /> */}
+      />
     </BlogLayout>
   );
 }

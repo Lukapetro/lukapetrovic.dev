@@ -1,7 +1,5 @@
 import Container from 'components/Container';
 import ProjectCard from 'components/ProjectCard';
-import { allProjects } from '.contentlayer/data';
-import { pick } from 'contentlayer/client';
 
 export default function Projects({ projects }) {
   return (
@@ -31,7 +29,7 @@ export default function Projects({ projects }) {
   );
 }
 
-export function getStaticProps() {
+export async function getStaticProps() {
   const projects = allProjects.map((project) =>
     pick(project, ['slug', 'title', 'logo', 'description'])
   );

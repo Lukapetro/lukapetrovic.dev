@@ -1,27 +1,29 @@
 import ProjectLayout from 'layouts/project';
-import { allProjects } from '.contentlayer/data';
-//import components from 'components/MDXComponents';
-import { useMDXComponent } from 'next-contentlayer/hooks';
+import components from 'components/MDXComponents';
 
-export default function ProjectPage(project) {
-  //const Component = useMDXComponent(project.body.code);
+export default function ProjectPage({ project }) {
+  const Component = useMDXComponent(project.body.code);
 
   return (
     <ProjectLayout project={project}>
-      {/* <Component components={components} /> */}
+      <Component
+        components={{
+          ...components
+        }}
+      />
     </ProjectLayout>
   );
 }
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
   return {
     paths: allProjects.map((s) => ({ params: { slug: s.slug } })),
     fallback: false
   };
 }
 
-export function getStaticProps({ params }) {
+export async function getStaticProps({ params }) {
   const project = allProjects.find((project) => project.slug === params.slug);
 
-  return { props: project };
+  return { props: { project } };
 }
