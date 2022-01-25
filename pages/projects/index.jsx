@@ -13,7 +13,7 @@ export default function Projects({ projects }) {
       <div className="mb-8">
         <p className="text-gray-600 dark:text-gray-400 mb-8">
           Qui sono presentati alcuni dei progetti che ho sviluppato. Alcuni sono
-          live in produzione, altri sono stati una bella esperienza.
+          live in produzione, altri sono stati belle esperienze.
         </p>
         <div className="grid w-full grid-cols-1 gap-4 my-2 mt-4 sm:grid-cols-1">
           {projects.map((project) => (
