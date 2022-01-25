@@ -1,6 +1,6 @@
-import NextLink from "next/link";
-import cn from "classnames";
-import { useRouter } from "next/router";
+import NextLink from 'next/link';
+import cn from 'classnames';
+import { useRouter } from 'next/router';
 
 function NavItem({ href, text }) {
   const router = useRouter();
@@ -11,9 +11,9 @@ function NavItem({ href, text }) {
       <a
         className={cn(
           isActive
-            ? "font-semibold text-gray-800 dark:text-gray-200"
-            : "font-normal text-gray-600 dark:text-gray-400",
-          "hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all"
+            ? 'font-semibold text-gray-800 dark:text-gray-200'
+            : 'font-normal text-gray-600 dark:text-gray-400',
+          'hidden md:inline-block p-1 sm:px-3 sm:py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all'
         )}
       >
         <span className="capsize">{text}</span>
@@ -28,8 +28,8 @@ export default function Menu() {
       {/* <MobileMenu /> */}
       <NavItem href="/" text="Home" />
       <NavItem href="/projects" text="Progetti" />
-      <NavItem href="/blog" text="Blog" />
-      <NavItem href="/snippets" text="Snippets" />
+      {/* <NavItem href="/blog" text="Blog" /> */}
+      <NavItem href="/about" text="About" />
     </div>
   );
 }

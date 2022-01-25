@@ -26,11 +26,11 @@ export default function Footer() {
             </a>
           </Link>
 
-          <Link href="/travel-timeline">
+          {/* <Link href="/travel-timeline">
             <a className="text-gray-500 hover:text-gray-600 transition">
               Travels
             </a>
-          </Link>
+          </Link> */}
         </div>
         <div className="flex flex-col space-y-4">
           <ExternalLink href="https://www.linkedin.com/in/lucapetro/">
@@ -39,11 +39,11 @@ export default function Footer() {
           <ExternalLink href="https://github.com/Lukapetro">
             GitHub
           </ExternalLink>
-          <Link href="/privacy">
+          {/* <Link href="/privacy">
             <a className="text-gray-500 hover:text-gray-600 transition">
               Privacy
             </a>
-          </Link>
+          </Link> */}
         </div>
         <div className="flex flex-col space-y-4">
           <Link href="/projects">
@@ -51,9 +51,9 @@ export default function Footer() {
               Progetti
             </a>
           </Link>
-          <Link href="/blog">
+          {/* <Link href="/blog">
             <a className="text-gray-500 hover:text-gray-600 transition">Blog</a>
-          </Link>
+          </Link> */}
           <Link href="/changelog">
             <a className="text-gray-500 hover:text-gray-600 transition">
               Changelog

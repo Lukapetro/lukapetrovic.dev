@@ -1,5 +1,7 @@
 import Container from 'components/Container';
 import ProjectCard from 'components/ProjectCard';
+import { allProjects } from '.contentlayer/data';
+import { pick } from 'contentlayer/client';
 
 export default function Projects({ projects }) {
   return (

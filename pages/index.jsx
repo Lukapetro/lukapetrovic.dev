@@ -1,9 +1,10 @@
-import Container from "components/Container";
-import Image from "next/image";
-import Link from "next/link";
-import PostCard from "components/home/PostCard";
-import ProjectCard from "components/home/ProjectCard";
-import ShowAllButton from "components/home/ShowAllButton";
+import Container from 'components/Container';
+import Image from 'next/image';
+import Link from 'next/link';
+import PostCard from 'components/home/PostCard';
+import ProjectCard from 'components/home/ProjectCard';
+import ShowAllButton from 'components/home/ShowAllButton';
+import Skills from 'components/home/Skills';
 
 export default function Home() {
   return (
@@ -16,6 +17,9 @@ export default function Home() {
           <h2 className="text-gray-700 dark:text-gray-200 mb-4">
             Senior Consultant at <span className="font-semibold">Amaris</span>
           </h2>
+          <p className="text-gray-600 dark:text-gray-400">
+            Fullstack developer attualmente in Italia 🇮🇹 .
+          </p>
           <p className="text-gray-600 dark:text-gray-400 mb-16">
             Problem solver. Javascript enthusiast.
           </p>
@@ -30,7 +34,14 @@ export default function Home() {
           />
         </div>
       </div>
-      <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 text-black dark:text-white mt-8">
+      <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 text-black dark:text-white mt-4 sm:mt-8">
+        Skills
+      </h3>
+      <div className="grid grid-rows-5 md:grid-rows-3 grid-flow-col gap-4 w-full">
+        <Skills />
+      </div>
+
+      <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-8 text-black dark:text-white mt-12">
         Progetti
       </h3>
       <div className="flex gap-6 flex-col md:flex-col w-full">
@@ -43,14 +54,14 @@ export default function Home() {
           gradient="from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]"
         />
       </div>
-      <ShowAllButton title="Mostra tutti i progetti" href={"/projects"} />
+      <ShowAllButton title="Mostra tutti i progetti" href={'/projects'} />
 
-      <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-16 text-black dark:text-white">
+      {/* <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-16 text-black dark:text-white">
         Posts
       </h3>
       <PostCard index="01" href="/" length="20/01/2022" title="Post 1" />
       <PostCard index="02" href="/" length="20/01/2022" title="Post 2" />
-      <ShowAllButton title="Mostra tutti i post" href={"/blog"} />
+      <ShowAllButton title="Mostra tutti i post" href={"/blog"} /> */}
     </Container>
   );
 }
