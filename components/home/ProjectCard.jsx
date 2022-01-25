@@ -1,7 +1,7 @@
-import Link from "next/link";
-import cn from "classnames";
-import fetcher from "utils/fetcher";
-import useSWR from "swr";
+import Link from 'next/link';
+import cn from 'classnames';
+import fetcher from 'utils/fetcher';
+import useSWR from 'swr';
 
 export default function ProjectCard({ title, gradient, slug }) {
   //const { data } = useSWR(`/api/views/${slug}`, fetcher);
@@ -9,11 +9,11 @@ export default function ProjectCard({ title, gradient, slug }) {
   //const views = data?.total;
 
   return (
-    <Link href={`/`}>
+    <Link href={`/projects/${slug}`}>
       <a
         className={cn(
-          "transform hover:scale-[1.01] transition-all",
-          "rounded-xl w-full bg-gradient-to-r p-1",
+          'transform hover:scale-[1.01] transition-all',
+          'rounded-xl w-full bg-gradient-to-r p-1',
           gradient
         )}
       >
@@ -45,7 +45,7 @@ export default function ProjectCard({ title, gradient, slug }) {
               />
             </svg>
             <span className="ml-2 align-baseline capsize">
-              {views ? new Number(views).toLocaleString() : "–––"}
+              {views ? new Number(views).toLocaleString() : '–––'}
             </span>
           </div>
         </div>
