@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
     return <Maintenance />;
   }
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider attribute="class" defaultTheme="dark">
       <Component {...pageProps} />
     </ThemeProvider>
   )
