@@ -1,7 +1,7 @@
 import { useTheme } from 'next-themes';
 
 export default function ThemeButton({ mounted }) {
-  const { resolvedTheme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme('light');
 
   return (
     <button
