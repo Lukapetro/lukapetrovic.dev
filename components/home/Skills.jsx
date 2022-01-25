@@ -71,6 +71,7 @@ const skills = [
 
 const SkillCard = ({ name, icon, color, href }) => (
   <a
+    key={name}
     target="_blank"
     rel="noopener noreferrer"
     href={href}

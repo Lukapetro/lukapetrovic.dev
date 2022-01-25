@@ -7,6 +7,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^3.8.1",
     "classnames": "^2.3.1",
     "contentlayer": "^0.0.34",
     "date-fns": "^2.28.0",
@@ -25,6 +26,7 @@
     "eslint": "^8.7.0",
     "eslint-config-next": "^12.0.8",
     "postcss": "^8.4.5",
+    "prisma": "^3.8.1",
     "reading-time": "^1.5.0",
     "rehype": "^12.0.0",
     "rehype-autolink-headings": "^6.1.1",

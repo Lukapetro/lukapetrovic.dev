@@ -1,7 +1,5 @@
 import Container from 'components/Container';
 import Image from 'next/image';
-import Link from 'next/link';
-import PostCard from 'components/home/PostCard';
 import ProjectCard from 'components/home/ProjectCard';
 import ShowAllButton from 'components/home/ShowAllButton';
 import Skills from 'components/home/Skills';

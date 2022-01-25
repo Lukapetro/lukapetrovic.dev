@@ -1,6 +1,5 @@
-import Container from "components/Container";
-import Link from "next/link";
-import Timeline from "components/Timeline";
+import Container from 'components/Container';
+import Timeline from 'components/Timeline';
 
 export default function About() {
   return (

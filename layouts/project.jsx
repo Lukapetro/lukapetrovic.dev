@@ -1,5 +1,6 @@
 import Container from 'components/Container';
 import Image from 'next/image';
+import ViewCounter from 'components/ViewCounter';
 
 export default function ProjectLayout({ children, project }) {
   return (
@@ -13,6 +14,7 @@ export default function ProjectLayout({ children, project }) {
             <p className="text-gray-700 dark:text-gray-300">
               {project.description}
             </p>
+            <ViewCounter slug={project.slug} />
           </div>
           <div className="mt-2 sm:mt-0">
             <Image

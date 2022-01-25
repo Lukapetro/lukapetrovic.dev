@@ -4,9 +4,8 @@ import fetcher from 'utils/fetcher';
 import useSWR from 'swr';
 
 export default function ProjectCard({ title, gradient, slug }) {
-  //const { data } = useSWR(`/api/views/${slug}`, fetcher);
-  const views = 10;
-  //const views = data?.total;
+  const { data } = useSWR(`/api/views/${slug}`, fetcher);
+  const views = data?.total;
 
   return (
     <Link href={`/projects/${slug}`}>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const Divider = () => {
   return (
@@ -43,25 +43,12 @@ const Step = (props) => {
 const FullTimeline = () => (
   <>
     <Divider />
-    {/* <Year>2018</Year>
-    <ul>
-      <Step title="Started dsmtech.io 🤘🏻">
-        Reflecting on my recent job search, I realized there wasn't a
-        centralized listing of all the Des Moines tech companies. So...I created
-        it.
-      </Step>
-      <Step title="Joined Hy-Vee 🛒">
-        It was time for a change in my career, and Hy-Vee came calling. The best
-        part was reducing my commute time by an hour/day.
-      </Step>
-    </ul> 
-    <Divider />*/}
     <Year>2016</Year>
     <ul>
-      {/*  <Step title="Graduated College 🎓">
-        One of my most cherished accomplishments. I worked my ass off to get
-        this degree.
-      </Step> */}
+      <Step title="Termine studi università 🎓">
+        E' stata un'avventura di alti e bassi dove ho imparato moltissime cose e
+        conosciuto persone fantastiche.
+      </Step>
       <Step title="Full-Time in Capgemini">
         Mi è stata offerta e ho accettato un'opportunità a tempo pieno con
         Capgemini. La mia prima e vera esperienza lavorativa.
