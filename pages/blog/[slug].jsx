@@ -1,4 +1,5 @@
 import BlogLayout from 'layouts/blog';
+import { allBlogs } from '.contentlayer/data';
 import components from 'components/MDXComponents';
 
 export default function Post({ post }) {
