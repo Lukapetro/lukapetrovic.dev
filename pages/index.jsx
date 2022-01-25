@@ -28,7 +28,7 @@ export default function Home() {
             height={176}
             width={176}
             src="/avatar.png"
-            className="rounded-full filter grayscale"
+            className="rounded-full"
           />
         </div>
       </div>
