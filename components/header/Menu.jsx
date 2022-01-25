@@ -1,3 +1,4 @@
+import MobileMenu from './MenuMobile';
 import NextLink from 'next/link';
 import cn from 'classnames';
 import { useRouter } from 'next/router';
@@ -25,6 +26,7 @@ function NavItem({ href, text }) {
 export default function Menu() {
   return (
     <div className="ml-[-0.60rem]">
+      <MobileMenu />
       {/* <MobileMenu /> */}
       <NavItem href="/" text="Home" />
       <NavItem href="/projects" text="Progetti" />

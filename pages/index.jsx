@@ -29,7 +29,7 @@ export default function Home() {
             alt="Luka Petrovic"
             height={176}
             width={176}
-            src="/avatar.jpeg"
+            src="/avatar.png"
             className="rounded-full filter grayscale"
           />
         </div>

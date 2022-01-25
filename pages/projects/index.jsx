@@ -16,15 +16,18 @@ export default function Projects({ projects }) {
           live in produzione, altri sono stati belle esperienze.
         </p>
         <div className="grid w-full grid-cols-1 gap-4 my-2 mt-4 sm:grid-cols-1">
-          {projects.map((project) => (
-            <ProjectCard
-              key={project.slug}
-              title={project.title}
-              slug={project.slug}
-              logo={project.logo}
-              description={project.description}
-            />
-          ))}
+          {projects.map(
+            (project) =>
+              project.isPublished && (
+                <ProjectCard
+                  key={project.slug}
+                  title={project.title}
+                  slug={project.slug}
+                  logo={project.logo}
+                  description={project.description}
+                />
+              )
+          )}
         </div>
       </div>
     </Container>
@@ -33,7 +36,7 @@ export default function Projects({ projects }) {
 
 export async function getStaticProps() {
   const projects = allProjects.map((project) =>
-    pick(project, ['slug', 'title', 'logo', 'description'])
+    pick(project, ['slug', 'title', 'logo', 'description', 'isPublished'])
   );
 
   return { props: { projects } };
