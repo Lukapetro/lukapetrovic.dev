@@ -22,9 +22,9 @@ export default function Container(params) {
   useEffect(() => setMounted(true), []);
 
   const meta = {
-    title: 'Luka Petrovic – Developer.',
-    description: `Fullstack developer, JavaScript enthusiast.`,
-    image: 'https://leerob.io/static/images/banner.png',
+    title: 'Luka Petrovic',
+    description: `Fullstack developer.`,
+    image: 'https://lukapetrovic.dev/static/images/banner.png',
     type: 'website',
     ...customMeta
   };

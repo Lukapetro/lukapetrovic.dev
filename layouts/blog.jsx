@@ -8,7 +8,7 @@ export default function BlogLayout({ children, post }) {
     <Container
       title={`${post.title} – Luka Petrovic`}
       description={post.summary}
-      image={`https://leerob.io${post.image}`}
+      image={`https://lukapetrovic.dev${post.image}`}
       date={new Date(post.publishedAt).toISOString()}
       type="article"
     >
