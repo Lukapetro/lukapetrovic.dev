@@ -22,18 +22,18 @@ const computedFields = {
   }
 };
 
-// const Blog = defineDocumentType(() => ({
-//   name: 'Blog',
-//   filePathPattern: 'blog/*.mdx',
-//   bodyType: 'mdx',
-//   fields: {
-//     title: { type: 'string', required: true },
-//     publishedAt: { type: 'string', required: true },
-//     summary: { type: 'string', required: true },
-//     image: { type: 'string', required: true }
-//   },
-//   computedFields
-// }));
+const Blog = defineDocumentType(() => ({
+  name: 'Blog',
+  filePathPattern: 'blog/*.mdx',
+  bodyType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    publishedAt: { type: 'string', required: true },
+    summary: { type: 'string', required: true },
+    image: { type: 'string', required: true }
+  },
+  computedFields
+}));
 
 
 const Project = defineDocumentType(() => ({
@@ -63,7 +63,7 @@ const Changelog = defineDocumentType(() => ({
 
 const contentLayerConfig = makeSource({
   contentDirPath: 'data',
-  documentTypes: [Changelog, Project],
+  documentTypes: [Blog, Changelog, Project],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
