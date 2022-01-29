@@ -14,6 +14,15 @@ export default function About() {
           informatica all'università Politecnica delle Marche. Nel tempo libero
           mi piace allenarmi e giocare con il mio lupetto, Blue 🐺
         </p>
+        {/* <p>
+          Hi, I'm Luka. I am a fullstack developer. Currently I work at Amaris
+          as a Senior Consultant.
+        </p>
+        <p>
+          I grew up in San Benedetto del Tronto and did computer engineering at
+          UNIVPM. In my free time I like to work out, play some video games and
+          spend time with my woldog, Blue 🐺.
+        </p> */}
       </div>
       <Timeline />
     </Container>

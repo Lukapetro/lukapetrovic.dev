@@ -54,7 +54,7 @@ export default function Container(params) {
         id="skip"
         className="flex flex-col justify-center px-8 bg-gray-50 dark:bg-gray-900"
       >
-        <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
+        <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-12 w-full">
           <PageTitle pageTitle={pageTitle} />
           {children}
         </div>

@@ -15,10 +15,10 @@ export default function Badge({ variation, title }) {
           </div>
         );
 
-      case 'announcement':
+      case 'notice':
         return (
           <div className="text-xs px-3 bg-blue-200 text-blue-800 rounded py-1 font-semibold flex justify-center items-center">
-            ANNOUNCEMENT
+            NOTICE
           </div>
         );
 
@@ -35,9 +35,9 @@ export default function Badge({ variation, title }) {
   }
 
   return (
-    <div className="flex mb-2">
-      {renderBadge(variation)}{' '}
-      <h3 className="ml-2 text-lg font-semibold">{title}</h3>
+    <div className="flex flex-col sm:flex-row items-start sm:items-center">
+      <div className="w-24 mr-2 mb-2"> {renderBadge(variation)}</div>
+      <h3 className="text-lg font-semibold mb-2">{title}</h3>
     </div>
   );
 }
