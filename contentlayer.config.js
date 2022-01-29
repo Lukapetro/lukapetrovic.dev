@@ -6,6 +6,7 @@ import {
 import readingTime from 'reading-time';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeCodeTitles from 'rehype-code-titles';
+import rehypePrism from 'rehype-prism-plus';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 
@@ -21,18 +22,18 @@ const computedFields = {
   }
 };
 
-const Blog = defineDocumentType(() => ({
-  name: 'Blog',
-  filePathPattern: 'blog/*.mdx',
-  bodyType: 'mdx',
-  fields: {
-    title: { type: 'string', required: true },
-    publishedAt: { type: 'string', required: true },
-    summary: { type: 'string', required: true },
-    image: { type: 'string', required: true }
-  },
-  computedFields
-}));
+// const Blog = defineDocumentType(() => ({
+//   name: 'Blog',
+//   filePathPattern: 'blog/*.mdx',
+//   bodyType: 'mdx',
+//   fields: {
+//     title: { type: 'string', required: true },
+//     publishedAt: { type: 'string', required: true },
+//     summary: { type: 'string', required: true },
+//     image: { type: 'string', required: true }
+//   },
+//   computedFields
+// }));
 
 
 const Project = defineDocumentType(() => ({
@@ -62,12 +63,13 @@ const Changelog = defineDocumentType(() => ({
 
 const contentLayerConfig = makeSource({
   contentDirPath: 'data',
-  documentTypes: [Blog, Changelog, Project],
+  documentTypes: [Changelog, Project],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
       rehypeSlug,
       rehypeCodeTitles,
+      rehypePrism,
       [
         rehypeAutolinkHeadings,
         {
