@@ -49,7 +49,7 @@ export default function Home() {
           slug="twin-yield"
         />
         <ProjectCard
-          title="Gymless"
+          title="#Gymless"
           gradient="from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]"
           slug="gymless"
         />
