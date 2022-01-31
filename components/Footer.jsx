@@ -39,6 +39,7 @@ export default function Footer() {
           <ExternalLink href="https://github.com/Lukapetro">
             GitHub
           </ExternalLink>
+          <ExternalLink href="https://read.cv/lukapetro">Resume</ExternalLink>
           {/* <Link href="/privacy">
             <a className="text-gray-500 hover:text-gray-600 transition">
               Privacy
