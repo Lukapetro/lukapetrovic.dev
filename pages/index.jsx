@@ -16,7 +16,7 @@ export default function Home() {
             Senior Consultant at <span className="font-semibold">Amaris</span>
           </h2>
           <p className="text-gray-600 dark:text-gray-400">
-            Fullstack developer attualmente in Italia 🇮🇹 .
+            Fullstack developer currently in Italy 🇮🇹 .
           </p>
           <p className="text-gray-600 dark:text-gray-400 mb-16">
             Problem solver. Javascript enthusiast.
@@ -40,7 +40,7 @@ export default function Home() {
       </div>
 
       <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-8 text-black dark:text-white mt-12">
-        Progetti
+        Projects
       </h3>
       <div className="flex gap-6 flex-col md:flex-col w-full">
         <ProjectCard
@@ -54,7 +54,7 @@ export default function Home() {
           slug="gymless"
         />
       </div>
-      <ShowAllButton title="Mostra tutti i progetti" href={'/projects'} />
+      <ShowAllButton title="Show all projects" href={'/projects'} />
 
       {/* <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-16 text-black dark:text-white">
         Posts

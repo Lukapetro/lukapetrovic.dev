@@ -29,7 +29,7 @@ export default function Menu() {
       <MobileMenu />
       {/* <MobileMenu /> */}
       <NavItem href="/" text="Home" />
-      <NavItem href="/projects" text="Progetti" />
+      <NavItem href="/projects" text="Projects" />
       {/* <NavItem href="/blog" text="Blog" /> */}
       <NavItem href="/about" text="About" />
     </div>

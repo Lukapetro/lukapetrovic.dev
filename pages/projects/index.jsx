@@ -6,14 +6,14 @@ import { pick } from 'contentlayer/client';
 export default function Projects({ projects }) {
   return (
     <Container
-      pageTitle="Progetti"
+      pageTitle="Projects"
       title="Progetti – Luka Petrovic"
       description="Collezione di progetti sviluppati principalmente con Javascript."
     >
       <div className="mb-8">
         <p className="text-gray-600 dark:text-gray-400 mb-8">
-          Qui sono presentati alcuni dei progetti che ho sviluppato. Alcuni sono
-          live in produzione, altri sono stati belle esperienze.
+          Presented here are some of the projects I have developed. Some are
+          live in production, others have been beautiful experiences.
         </p>
         <div className="grid w-full grid-cols-1 gap-4 my-2 mt-4 sm:grid-cols-1">
           {projects.map(

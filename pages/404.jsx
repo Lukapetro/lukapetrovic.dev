@@ -9,12 +9,12 @@ export default function NotFound() {
           404 – Not Found
         </h1>
         <p className="text-gray-600 dark:text-gray-400 mb-8">
-          Sembra che che tu abbia trovato qualcosa che non esiste più o abbia
-          scritto qualcosa di sbagliato. Puoi controllare due volte l'URL?
+          It sounds like you have found something that no longer exists or you
+          have typed something wrong. Can you double check the URL? 😬
         </p>
         <Link href="/">
           <a className="p-1 sm:p-4 w-64 font-bold mx-auto bg-gray-200 dark:bg-gray-800 text-center rounded-md text-black dark:text-white">
-            Ritorna alla Home
+            Back to Home
           </a>
         </Link>
       </div>
