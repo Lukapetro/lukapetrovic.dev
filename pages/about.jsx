@@ -6,23 +6,14 @@ export default function About() {
     <Container pageTitle="About Me">
       <div className="mb-8 prose leading-6 text-gray-600 dark:text-gray-400">
         <p>
-          Ciao, sono Luka. Sono uno sviluppatore fullstack. Attualmente lavoro a
-          Amaris come Senior Consultant.
-        </p>
-        <p>
-          Sono cresciuto a San Benedetto del Tronto e ho frequentato ingegneria
-          informatica all'università Politecnica delle Marche. Nel tempo libero
-          mi piace allenarmi e giocare con il mio lupetto, Blue 🐺
-        </p>
-        {/* <p>
           Hi, I'm Luka. I am a fullstack developer. Currently I work at Amaris
           as a Senior Consultant.
         </p>
         <p>
           I grew up in San Benedetto del Tronto and did computer engineering at
           UNIVPM. In my free time I like to work out, play some video games and
-          spend time with my woldog, Blue 🐺.
-        </p> */}
+          spend time with my wolfdog, Blue 🐺.
+        </p>
       </div>
       <Timeline />
     </Container>

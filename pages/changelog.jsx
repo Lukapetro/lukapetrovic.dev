@@ -8,12 +8,12 @@ export default function Changelog({ changelogs }) {
     <Container
       pageTitle="Changelog"
       title="Changelog – Luka Petrovic"
-      description="Fonte della verità per tutte le modifiche fatte al portfolio"
+      description="Source of truth for all changes made to the portfolio"
     >
       <div>
         <p className="text-gray-600 dark:text-gray-400 mb-8">
-          Questo changelog vuole essere un tracciato per tutte le modifiche
-          apportate su questo portfolio.
+          This changelog is meant to be a roadmap for all the changes made to
+          this portfolio.
         </p>
         <ul>
           {changelogs.map((changelog) => (

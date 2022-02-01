@@ -45,64 +45,63 @@ const FullTimeline = () => (
     <Divider />
     <Year>2016</Year>
     <ul>
-      <Step title="Termine studi università 🎓">
+      {/* <Step title="Termine studi università 🎓">
         E' stata un'avventura di alti e bassi dove ho imparato moltissime cose e
         conosciuto persone fantastiche.
-      </Step>
+      </Step> */}
       <Step title="Full-Time in Capgemini">
-        Mi è stata offerta e ho accettato un'opportunità a tempo pieno con
-        Capgemini. La mia prima e vera esperienza lavorativa.
+        I was offered and accepted a full-time opportunity with Capgemini. My
+        first and real work experience.
       </Step>
-      <Step title="Trasferimento a Milano 🏙">
-        Mi sono trasferito a Milano in un classico bilocale. Mi è subito
-        piaciuto il mood di questa città.
+      <Step title="Transfer to Milan  🏙">
+        I moved to Milan in a classic two-room apartment. I immediately liked
+        the mood of this city.
       </Step>
     </ul>
     <Divider />
     <Year>2015</Year>
     <ul>
-      <Step title="Erasmus a Barcellona 🔥">
-        Una delle esperienze più incredibili che abbia vissuto. 8 mesi
-        indimenticabili nella mia città preferita.
+      <Step title="Erasmus in Barcelona 🔥">
+        One of the most incredible experiences I have had. 8 months
+        unforgettable in my favorite city.
       </Step>
     </ul>
     <Divider />
     <Year>2014</Year>
     <ul>
-      <Step title="Internship vari">
-        Ho collaborato con 2 aziende locali per accumulare qualche esperienza
-        sul campo. Un grazie ai ragazzi di Apio per l'opportunità!
+      <Step title="Various internships">
+        I have worked with 2 local companies to gain some experience in the
+        field. Thanks to the folks at Apio for the opportunity!
       </Step>
     </ul>
     <Divider />
     <Year>2011</Year>
     <ul>
-      <Step title="Diploma scuola superiore 🎒">
-        Potessi fermare il tempo, resterei per sempre ai tempi della scuola
-        superiore. Bei momenti.
+      <Step title="High school graduation 🎒">
+        If I could stop time, I would stay forever in my high school days. high
+        school. Good times.
       </Step>
-      <Step title="Inizio all'Università Politecnica delle Marche 🏫">
-        Vista la mia carriera alle superiori, matematica e informatica era
-        l'unica strada percorribile, e allora vai di ingegneria informatica.
+      <Step title="University start 🏫">
+        Given my high school career, math and computer science was the only way
+        to go, so go computer engineering.
       </Step>
-      <Step title="Imparato a sviluppare ⌨️">
-        Corso di programmazione a oggetti. Esame basato sullo sviluppo di
-        un'applicazione in team. Ecco la mia prima vera esperienza da
-        sviluppatore.
+      <Step title="Learned to develop ⌨️">
+        Object Oriented Programming Course. Exam based on the development of an
+        application in a team. Here is my first real experience as a developer.
       </Step>
     </ul>
     <Divider />
     <Year>1998</Year>
     <ul>
-      <Step title="Primo Computer 🖥️">
-        Ricordo moltissime notti passate a giocare a Final Fantasy VII e Age of
+      <Step title="First Computer 🖥️">
+        I remember a lot of nights spent playing Final Fantasy VII and Age of
         Empires
       </Step>
     </ul>
     <Divider />
     <Year>1993</Year>
     <ul>
-      <Step title="Nato 👶🏼 🍼">Beh eccomi qua.</Step>
+      <Step title="Born 👶🏼 🍼">Well here I am. Hello world!</Step>
     </ul>
   </>
 );
@@ -117,37 +116,36 @@ export default function Timeline() {
       </h3>
       <Year>2021</Year>
       <ul>
-        <Step title="Arriva Blue 🐺">
-          Un nuovo membro si unisce al branco, un cucciolo di lupo cecoslovacco
-          di nome blue.
+        <Step title="Here comes Blue 🐺">
+          A new member joins the pack, a Czechoslovakian wolf pup named Blue.
         </Step>
-        <Step title="Joino Twin Yield 📈">
-          Mi sono unito al team di una startup che crea portafogli di
-          investimento con diversi algoritmi. Indovinate il mio ruolo!
+        <Step title="Joined Twin Yield 📈">
+          I joined the team of a startup that creates portfolios of people-based
+          investments with different algorithms. Guess what my role is!
         </Step>
-        <Step title="Comprato la prima macchina 🏎️">
-          Chi vuole muoversi a piedi? Io no. Inoltre i sedili riscaldati
-          d'inverno sono il top.
+        <Step title="Bought my first car 🏎️">
+          Who wants to get around on foot? I don't. In addition, the heated
+          seats in winter are the top.
         </Step>
       </ul>
       <Divider />
       <Year>2020</Year>
       <ul>
-        <Step title="Joino Gymless 💪">
-          La pandemia ha creato anche nuove opportunità. Gymless diventa un
-          nuovo modo di allenarsi all'aperto.
+        <Step title="Joined Gymless 💪">
+          The pandemic has also created new opportunities. Gymless becomes a new
+          way to exercise outdoors.
         </Step>
-        <Step title="Rientro a San Benedetto 🌊">
-          Il remote working diventa la base. E' giunto il momento per me di
-          tornare al mare a respirare aria fresca. Grazie di tutto Milano.
+        <Step title="Return to San Benedetto 🌊">
+          Remote working becomes the foundation. The time has come for me to
+          return to the sea and breathe fresh air. Thanks for everything Milan.
         </Step>
       </ul>
       <Divider />
       <Year>2019</Year>
       <ul>
-        <Step title="Joino Amaris">
-          Era il momento di cambiare la mia carriera e Amaris mi ha chiamato.
-          Sono entusiasta di affrontare nuove sfide!
+        <Step title="Joined Amaris">
+          It was time for a career change and Amaris called me. I am excited to
+          take on new challenges!
         </Step>
       </ul>
       {isShowingFullTimeline ? (
@@ -158,7 +156,7 @@ export default function Timeline() {
           className="flex items-center text-sm my-4 mx-auto px-4 py-2 rounded-md font-medium text-gray-900 dark:text-gray-100"
           onClick={() => showFullTimeline(true)}
         >
-          Mostra di più
+          Show more
           <svg
             className="h-4 w-4 ml-1"
             xmlns="http://www.w3.org/2000/svg"
