@@ -1,5 +1,9 @@
 # lukapetrovic.dev
 
+My personal portfolio
+
+## Tech Stack
+
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Database**: [PlanetScale](https://planetscale.com)
 - **ORM**: [Prisma](https://prisma.io/)
@@ -28,8 +32,8 @@ $ yarn
 $ yarn dev
 ```
 
-Create a `.env` file similar to [`.env.example`](https://github.com/leerob/leerob.io/blob/main/.env.example).
+Create a `.env` file similar to [`.env.example`](https://github.com/Lukapetro/lukapetro.io/blob/main/.env.example).
 
 ## Cloning / Forking
 
-Please review the [license](https://github.com/lukapetro/lukapetro.io/blob/main/LICENSE.txt) and remove all of my personal information (resume, blog posts, images, etc.).
+Please review the [license](https://github.com/Lukapetro/lukapetro.io/blob/main/LICENSE.txt).
