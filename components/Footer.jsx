@@ -49,7 +49,7 @@ export default function Footer() {
         <div className="flex flex-col space-y-4">
           <Link href="/projects">
             <a className="text-gray-500 hover:text-gray-600 transition">
-              Progetti
+              Projects
             </a>
           </Link>
           {/* <Link href="/blog">
