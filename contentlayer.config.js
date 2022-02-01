@@ -43,8 +43,8 @@ const Project = defineDocumentType(() => ({
   fields: {
     title: { type: 'string', required: true },
     description: { type: 'string', required: true },
-    logo: { type: 'string', required: true },
-    isPublished: { type: 'string', required: true }
+    isPublished: { type: 'string', required: true },
+    color: { type: 'string' },
   },
   computedFields
 }));

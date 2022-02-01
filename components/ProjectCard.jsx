@@ -1,31 +1,23 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import cn from 'classnames';
 
-export default function ProjectCard({
-  title,
-  description,
-  slug,
-  logo,
-  ...rest
-}) {
+export default function ProjectCard({ title, description, slug, logo, color }) {
+  console.log('color :>> ', color);
+
   return (
     <Link href={`/projects/${slug}`}>
       <a
-        className="flex border-4 border-grey-200 dark:border-gray-800 rounded p-4 w-full bg-white dark:bg-gray-900"
-        {...rest}
+        // className="flex justify-center border-4 border-grey-200 dark:border-gray-800 rounded-lg p-8 w-full bg-white dark:bg-gray-900"
+        className={cn('flex justify-center rounded-lg p-8 w-full mb-4', color)}
       >
-        <Image
-          alt={title}
-          height={64}
-          width={64}
-          src={`/logos/${logo}`}
-          className="rounded-full"
-        />
-        <div className="flex flex-col ml-8 ">
-          <h3 className="text-lg font-bold text-left mt-2 text-gray-900 dark:text-gray-100">
+        <div className="flex flex-col items-center">
+          <h3
+            className="text-3xl font-bold text-left mt-2 text-gray-100 "
+            // className="text-2xl font-bold text-left mt-2 text-gray-900 dark:text-gray-100"
+          >
             {title}
           </h3>
-          <p className="mt-1 text-gray-700 dark:text-gray-400">{description}</p>
+          <p className="mt-1 text-sm text-gray-100">{description}</p>
         </div>
       </a>
     </Link>

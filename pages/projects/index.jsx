@@ -23,8 +23,8 @@ export default function Projects({ projects }) {
                   key={project.slug}
                   title={project.title}
                   slug={project.slug}
-                  logo={project.logo}
                   description={project.description}
+                  color={project.color}
                 />
               )
           )}
@@ -36,7 +36,7 @@ export default function Projects({ projects }) {
 
 export async function getStaticProps() {
   const projects = allProjects.map((project) =>
-    pick(project, ['slug', 'title', 'logo', 'description', 'isPublished'])
+    pick(project, ['slug', 'title', 'description', 'isPublished', 'color'])
   );
 
   return { props: { projects } };
