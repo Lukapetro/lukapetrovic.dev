@@ -7,6 +7,7 @@ export default function ProjectCard({ title, description, slug, gradient }) {
       <a
         // className="flex justify-center border-4 border-grey-200 dark:border-gray-800 rounded-lg p-8 w-full bg-white dark:bg-gray-900"
         className={cn(
+          'transform hover:scale-[1.03] transition-all',
           'flex justify-center rounded-lg p-8 w-full mb-4',
           gradient
         )}
