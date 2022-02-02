@@ -4,8 +4,9 @@ import { allProjects } from '.contentlayer/data';
 import { pick } from 'contentlayer/client';
 
 const gradientList = [
-  'bg-gradient-to-r from-[#B8405E] to-[#FC4F4F]',
-  'bg-gradient-to-r from-[#3494E6] to-[#EC6EAD]'
+  'bg-gradient-to-r from-[#ff9966] via-[#ec38bc] to-[#ff5e62]',
+  'bg-gradient-to-r from-[#3494E6] to-[#EC6EAD]',
+  'bg-gradient-to-r from-[#7303c0] via-[#ec38bc] to-[#fdeff9]'
 ];
 
 export default function Projects({ projects }) {

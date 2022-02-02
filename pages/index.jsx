@@ -45,12 +45,12 @@ export default function Home() {
       <div className="flex gap-6 flex-col md:flex-col w-full">
         <ProjectCard
           title="Twin Yield"
-          gradient="from-[#D8B4FE] to-[#818CF8]"
+          gradient="from-[#ff9966] via-[#ec38bc] to-[#ff5e62]"
           slug="twin-yield"
         />
         <ProjectCard
           title="#Gymless"
-          gradient="from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]"
+          gradient="from-[#3494E6] to-[#EC6EAD]"
           slug="gymless"
         />
       </div>
