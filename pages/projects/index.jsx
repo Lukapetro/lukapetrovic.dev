@@ -3,10 +3,19 @@ import ProjectCard from 'components/ProjectCard';
 import { allProjects } from '.contentlayer/data';
 import { pick } from 'contentlayer/client';
 
+// const gradientList = [
+//   'bg-gradient-to-r from-[#ff9966] via-[#ec38bc] to-[#ff5e62]',
+//   'bg-gradient-to-r from-[#8360c3] to-[#2ebf91]',
+//   'bg-gradient-to-r from-[#40E0D0]  to-[#FF0080]',
+//   'bg-gradient-to-r from-[#3494E6] to-[#EC6EAD]',
+//   'bg-gradient-to-r from-[#40E0D0] via-[#FF8C00] to-[#FF0080]'
+// ];
+
 const gradientList = [
-  'bg-gradient-to-r from-[#ff9966] via-[#ec38bc] to-[#ff5e62]',
-  'bg-gradient-to-r from-[#3494E6] to-[#EC6EAD]',
-  'bg-gradient-to-r from-[#7303c0] via-[#ec38bc] to-[#fdeff9]'
+  'bg-gradient-to-r from-yellow-400 to-pink-500',
+  'bg-gradient-to-r from-pink-500 to-purple-500',
+  'bg-gradient-to-r from-purple-500 to-orange-500',
+  'bg-gradient-to-r from-blue-600 via-blue-500 to-pink-500'
 ];
 
 export default function Projects({ projects }) {

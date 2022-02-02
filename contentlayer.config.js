@@ -60,10 +60,21 @@ const Changelog = defineDocumentType(() => ({
   computedFields
 }));
 
+const Uses = defineDocumentType(() => ({
+  name: 'Uses',
+  filePathPattern: 'uses.mdx',
+  bodyType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+  },
+  computedFields
+}));
+
+
 
 const contentLayerConfig = makeSource({
   contentDirPath: 'data',
-  documentTypes: [Blog, Changelog, Project],
+  documentTypes: [Blog, Changelog, Project, Uses],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
