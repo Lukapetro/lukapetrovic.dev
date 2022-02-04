@@ -1,7 +1,7 @@
 ---
 title: 'lukapetrovic.dev'
 description: 'Personal portfolio.'
-isPublished: false
+isPublished: true
 ---
 
 <Image
@@ -15,168 +15,139 @@ isPublished: false
 [lukapetrovic.dev](https://www.lukapetrovic.dev/) wants to be my personal space in the infinite web.
 Here I'll tell about the projects I develop, about my life and maybe some articles in the tech world.
 
-> i
+> This portfolio is open source 🔥 link at the bottom
 
 ## Table of Contents
 
-1.  [What is Gymless?](/projects/gymless#what-is-gymless)
-2.  [From Gym to Gymless](/projects/gymless#from-gym-to-gymless)
-3.  [Tech Stack](/projects/lukapetro-io#tech-stack)
-4.  [Frontend](/projects/lukapetro-io#frontend)
-5.  [Backend](/projects/lukapetro-io#backend)
-6.  [Dev Ops](/projects/lukapetro-io#dev-ops)
-7.  [Conclusion](/projects/lukapetro-io#conclusion)
-8.  [Resources](/projects/lukapetro-io#resources)
+1.  [The 5 Ws (and 1 H)](/projects/lukapetro-io#the-5-ws-and-1-h)
+2.  [Tech Stack](/projects/lukapetro-io#tech-stack)
+3.  [Overview](/projects/lukapetro-io#overview)
+4.  [Snippets](/projects/lukapetro-io#snippets)
+5.  [Conclusion](/projects/lukapetro-io#conclusion)
+6.  [Inspiration](/projects/lukapetro-io#inspiration)
 
-## What is Gymless?
+## The 5 Ws (and 1 H)
 
-A few days after the news of the Covid emergency and consequently of the closed gyms, a friend of mine who was a personal trainer,
-[Davide](https://www.instagram.com/davidegattitrainer/), contacted some of his clients for a special class out of town,
-precisely in the City Life neighborhood of Milan.
+The [**Five Ws and one H**](https://www.workfront.com/blog/project-management-101-the-5-ws-and-1-h-that-should-be-asked-of-every-project) are questions whose answers are considered basic in information-gathering.
+They constitute a formula for getting the complete story on a subject.
 
-All it took was a bit of word of mouth to bring many gym lovers to the classes
-organized by Gymless, and overnight they created groups of more than 30 people eager to resume their daily workouts.
+So without further ado, here we go:
 
-## From Gym to Gymless
-
-Due to strong demand, Gymless was born. Groups of people training in the open air in a format where you alternate between grounded
-and cardio phases and enjoy the open spaces the city is rich in.
-
-To organize this, I developed a management-style web app where trainers can
-create workout classes and enrolled users can sign up.
+- **Who**: well no doubt it's about me 😎
+- **What**: as obvious as it is, the purpose of this portfolio is to showcase my technical skills, projects I've contributed to and a bit of my personal life
+- **When**: this portfolio was born in 2017. At the end of 2021 I decided to give it a more modern and fresh look ( as we will see in the [tech stack](/projects/lukapetro-io#tech-stack))
+  and I recreated the entire web page with the intention of maintaining it over time without an expiration date
+- **Where**: 🌎
+- **Why**: well mainly it's to avoid answering always the same questions like: what technologies do you work with? what projects have you developed? etc.. I simply send the link and woilà, the game is done
+- **How**: TLDR [React](https://reactjs.org/). All details in the section below ⬇️
 
 ## Tech Stack
 
-The technology stack that I have chosen for the development of gymless is:
+This portfolio initially created in 2017 was born with [gatsby](https://www.gatsbyjs.com/).
 
-- [React](https://it.reactjs.org/)
-- [NodeJS](https://nodejs.org/it/)
-- [GraphQL](https://graphql.org/)
-- [PostgreSQL](https://www.postgresql.org/)
+After deciding I wanted to start from scratch and having followed the evolution of react frameworks,
+the decision came by itself. Here is how I developed the whole thing:
 
-## Frontend
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Database**: [PlanetScale](https://planetscale.com)
+- **ORM**: [Prisma](https://prisma.io/)
+- **Deployment**: [Vercel](https://vercel.com)
+- **Content**: [MDX](https://github.com/mdx-js/mdx)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+
+## Overview
 
 <Image
-  alt={`#Gymless`}
-  src={`/static/images/gymless/gymless-home.png`}
-  width={1000}
-  height={480}
+  alt={`lukapetro.io`}
+  src={`/static/images/lukapetro-io/lukapetro-scaffolding.png`}
+  width={901}
+  height={225}
 />
 
-As mentioned in the technology stack, I used [react](https://it.reactjs.org/) for frontend development.
-For the application state management I decided to use [Apollo](https://www.apollographql.com/)
-since I opted to use a server with [graphQL](https://graphql.org/). [Material UI](https://mui.com/) was my pick as the UI
-library for React components.
+In the image above we see the folder structure of the project. Looking at it in detail here is what we find:
 
-The frontend is divided into 2 macro-sections:
+- `data/*` - MDX data that is used for projects and changelogs.
+- `layouts` - The different page layouts each MDX category uses.
+- `utils` - A collection of helpful utilities or code for external services.
+- `pages/api/*` - [API routes](https://nextjs.org/docs/api-routes/introduction) powering project views.
+- `pages/projects` - [Personal projects](https://www.lukapetrovic.dev/projects).
+- `pages/*` - All other static pages.
+- `prisma/*` - My Prisma schema, which uses a PlanetScale MySQL database.
+- `public/*` - Static assets including fonts and images.
+- `styles/*` - A small amount of global styles. I'm mostly using vanilla Tailwind CSS.
 
-- **Admin section**
+## Snippets
 
-  The admin section allowed trainers to create, edit and delete workouts. Through a dashboard they had a generic overview
-  of the progress of the various classes and the number of registered users. They also had access to the archive of past classes,
-  where they could view all the data related to that workout.
+Some code snippets that may be of interest.
 
-- **User section**
-
-  The user section allowed the registration to the created classes.
-  To enroll it was necessary to pay an entrance fee. The payment flow was managed with [Paypal](https://www.paypal.com/)
-  or with credit card through the [Stripe API](https://stripe.com/).
-
-## Backend
-
-As mentioned in the previous section, [NodeJS](https://nodejs.org/it/) with Graphql was the main choice for the backend. In its first version Gymless
-was a simple online booking application, with scaling and evolution capabilities.
-The choice was made keeping this possibility in mind and knowing the advantages offered by this architecture:
-
-- Good fit for complex systems and microservices
-- Fetching data with a single API call.
-- No over- and under-fetching problems.
-- Tailoring requests to your needs.
-- API evolution without versioning.
-- Rapid application prototyping.
-
-> Note: the project needed to be out in the market as soon as possible, and this stack allowed to develop a prototype application very quickly.
-
-### Libraries worth mentioning
-
-Here are some of the libraries used for development:
-
-- [Apollo Server](https://www.apollographql.com/docs/apollo-server/)
-  is an open-source, spec-compliant GraphQL server that's compatible with any GraphQL client
-
-- [Bcryptjs](https://www.npmjs.com/package/bcryptjs)
-  used for storing passwords as hashed passwords instead of plaintext.
+Many of the contents of this portfolio are mdx files; To render a mdx content i used the [Contentlayer](https://www.npmjs.com/package/contentlayer) library.
+Contentlayer turns your content into data - making it super easy to import MD(X) and CMS content in your app.
 
 ```jsx
-var salt = bcrypt.genSaltSync(10);
-var hash = bcrypt.hashSync('B4c0//', salt);
-```
+const { withContentlayer } = require('next-contentlayer');
 
-- [Jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) -
-  An open standard used to share security information between two parties — a client and a server
-
-- [Stripe](https://stripe.com/) -
-  Service API that allows developers to accept payments online.
-
-```js
-const stripe = require('stripe')('secret_key');
-
-const paymentIntent = await stripe.paymentIntents.create({
-  amount: 2000,
-  currency: 'usd',
-  payment_method_types: ['card']
+module.exports = withContentlayer()({
+  // Your Next.js config...
 });
 ```
 
-- [Passport](https://www.passportjs.org/) is authentication middleware for Node.js. Mainly used for Facebook-strategy.
+Once we know how to properly render MD(X) content, Next.js will pre-render this page at build time using the props returned by
+[getStaticProps](https://nextjs.org/docs/basic-features/data-fetching/get-static-props).
 
-- [Prisma](https://www.prisma.io/) - Node.js and TypeScript ORM
-
-  Here is a simple example of how a table was structured in the DB
-
-```js
-model User {
-  id         Int      @id @default(autoincrement())
-  email      String   @unique
-  name       String?
-  workouts   Workout[]?
+```jsx
+export async function getStaticProps(context) {
+  return {
+    props: {} // will be passed to the page component as props
+  };
 }
 ```
 
-## Dev Ops
+Another interesting feature is the count of project views.
 
-To deploy the application I used 3 different platforms:
+To do this I used [Prisma](https://www.prisma.io/) + [SWR](https://www.npmjs.com/package/swr).
+Here is an example of how the ViewCounter works.
 
-- [Netlify](https://www.netlify.com/) for the client.
-- [Heroku](https://www.heroku.com/) for the server.
-- [AWS](https://aws.amazon.com/it/rds/postgresql/) for the database.
+```jsx
+export default function ViewCounter({ slug }) {
+  const { data } = useSWR(`/api/views/${slug}`, fetcher);
+  const views = new Number(data?.total);
 
-The pipeline included 3 main environments:
+  useEffect(() => {
+    const registerView = () =>
+      fetch(`/api/views/${slug}`, {
+        method: 'POST'
+      });
 
-1. Development
-2. Test
-3. Production
+    registerView();
+  }, [slug]);
+
+  return <span>{`${views > 0 ? views.toLocaleString() : '–––'} views`}</span>;
+}
+```
 
 ## Conclusion
 
-Create gymless was a great experience. For the first time alone I found myself managing all aspects of
-the application lifecycle, from choosing the technology stack, to interface design and db schema definition,
-to testing and deployment.
+I had a lot of fun developing this portfolio. I've been wanting to do something with [Next.js](https://nextjs.org/) and [Tailwind](https://tailwindcss.com/) for quite some time, so I jumped at the chance.
 
-I vividly remember the moments before the live release and the announcement on the Instagram page, a unique mix of
-emotions. Seeing users register and book classes without bugs or crashes was the most satisfying thing 😍.
+If you like the project I leave attached the link to the Github repo, you can clone/fork it, just make sure to remove all my personal data 😝
 
-All developed code is public in [my GitHub repo](https://github.com/Lukapetro/gymless-server).
+[All the code here](https://github.com/Lukapetro/lukapetro.io)
 
-## Resources
+Ps: feel free to leave a star, thanks ⭐
 
-- [Facebook page](https://www.facebook.com/Gymlessitalia/)
-- [Instagram profile](https://www.instagram.com/gymlessitalia/?hl=it)
-- [Youtube profile](https://www.youtube.com/channel/UCAnrqpeEJBwHj8VVE8b_YwA)
-- [The blonde salad](https://theblondesalad.com/lifestyle/gymless-liniziativa-nata-per-provare-che-a-milano-non-si-ferma-nulla-nemmeno-il-workout/)
+## Inspiration
+
+There are quite a bunch of portfolios I've been inspired by, I'll mention a few:
+
+- [Jahir Fiquitiva](https://jahir.dev/)
+- [Cassie Evans](https://www.cassie.codes/)
+- [Josh W Comeau](https://www.joshwcomeau.com/)
+- [Jared Palmer](https://jaredpalmer.com/)
+- [Fernando Paredes](https://fdp.io/)
+- [Lee Robinson](https://leerob.io/)
+- [Dan Holloran](https://danholloran.me/)
+- [Nikolai Bain](https://www.nikolaibain.com/)
 
 ---
 
-_Thanks to [Davide Gatti](https://www.instagram.com/davidegattitrainer/),
-[Sara Calvanese](https://www.instagram.com/sara.calvanese_videomaker/) and
-[Mattia Coppini](https://www.instagram.com/mattiacoppini21/?) for creating and believing in the project._
+_Special thanks to [Lucia Talamonti](https://read.cv/luciatalamonti) for helping me make stylistic choices on this portfolio_
