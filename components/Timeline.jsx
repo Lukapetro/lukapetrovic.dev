@@ -45,10 +45,10 @@ const FullTimeline = () => (
     <Divider />
     <Year>2016</Year>
     <ul>
-      {/* <Step title="Termine studi università 🎓">
-        E' stata un'avventura di alti e bassi dove ho imparato moltissime cose e
-        conosciuto persone fantastiche.
-      </Step> */}
+      <Step title="Finishing university 🎓">
+        It's been an adventure of ups and downs where I've learned a lot of things and
+        met fantastic people.
+      </Step>
       <Step title="Full-Time in Capgemini">
         I was offered and accepted a full-time opportunity with Capgemini. My
         first and real work experience.
@@ -114,6 +114,15 @@ export default function Timeline() {
       <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
         Timeline
       </h3>
+      <Year>2022</Year>
+      <ul>
+        <Step title="Joined Playtomic 🎾">
+        It was a crazy start to 2022. I went through a lot of selection processes, and in 
+        the end I decided to play the game with the role of senior frontend developer with a winning team, 
+        vamos Playtomic!
+        </Step>
+      </ul>
+      <Divider />
       <Year>2021</Year>
       <ul>
         <Step title="Here comes Blue 🐺">
