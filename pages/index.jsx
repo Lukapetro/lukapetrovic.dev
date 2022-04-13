@@ -35,7 +35,7 @@ export default function Home() {
       <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 text-black dark:text-white mt-4 sm:mt-8">
         Skills
       </h3>
-      <div className="grid grid-rows-5 md:grid-rows-3 grid-flow-col gap-4 w-full">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full">
         <Skills />
       </div>
 

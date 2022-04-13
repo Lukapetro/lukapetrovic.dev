@@ -6,7 +6,10 @@ import {
   SiJavascript,
   SiMongodb,
   SiNodedotjs,
-  SiTypescript
+  SiTypescript,
+  SiJest,
+  SiRedux,
+  SiReact
 } from 'react-icons/si';
 
 import { GrReactjs } from 'react-icons/gr';
@@ -65,6 +68,24 @@ const skills = [
     name: 'Docker',
     icon: <SiDocker className="h-5 w-5" />,
     color: 'text-blue-600',
+    href: 'https://www.docker.com/'
+  },
+  {
+    name: 'Redux',
+    icon: <SiRedux className="h-5 w-5" />,
+    color: 'text-purple-500',
+    href: 'https://redux-toolkit.js.org/'
+  },
+  {
+    name: 'React Native',
+    icon: <SiReact className="h-5 w-5" />,
+    color: 'text-sky-400',
+    href: 'https://reactnative.dev/'
+  },
+  {
+    name: 'Jest',
+    icon: <SiJest className="h-5 w-5" />,
+    color: 'text-orange-600',
     href: 'https://www.docker.com/'
   }
 ];
