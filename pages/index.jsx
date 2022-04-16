@@ -13,7 +13,9 @@ export default function Home() {
             Luka Petrovic
           </h1>
           <h2 className="text-gray-700 dark:text-gray-200 mb-4">
-            Senior Consultant at <span className="font-semibold">Amaris</span>
+            Senior Software Engineer at{' '}
+            <span className="font-semibold">FACEIT </span>
+            <Image src="/faceit.svg" alt="FACEIT" height={18} width={18} />
           </h2>
           <p className="text-gray-600 dark:text-gray-400">
             Fullstack developer currently in Italy 🇮🇹 .

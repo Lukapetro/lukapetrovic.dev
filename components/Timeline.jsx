@@ -46,8 +46,8 @@ const FullTimeline = () => (
     <Year>2016</Year>
     <ul>
       <Step title="Finishing university 🎓">
-        It's been an adventure of ups and downs where I've learned a lot of things and
-        met fantastic people.
+        It's been an adventure of ups and downs where I've learned a lot of
+        things and met fantastic people.
       </Step>
       <Step title="Full-Time in Capgemini">
         I was offered and accepted a full-time opportunity with Capgemini. My
@@ -117,9 +117,22 @@ export default function Timeline() {
       <Year>2022</Year>
       <ul>
         <Step title="Joined Playtomic 🎾">
-        It was a crazy start to 2022. I went through a lot of selection processes, and in 
-        the end I decided to play the game with the role of senior frontend developer with a winning team, 
-        vamos Playtomic!
+          It was a crazy start to 2022. I went through a lot of selection
+          processes, and in the end I decided to play the game with the role of
+          senior frontend engineer with a winning team, vamos Playtomic!
+        </Step>
+      </ul>
+      <ul>
+        <Step title="Joined BeConcept Studio 🖥️">
+          I accepted a part-time contract with a web agency in Milan, BeConcept
+          Studio. A lot of fun is on the way!
+        </Step>
+      </ul>
+      <ul>
+        <Step title="Adios Amaris, Welcome FACEIT 🎮">
+          Certainly the most significant change this year. After almost 4 years,
+          I am leaving amaris, where I was born, to accept a new challenge with
+          FACEIT. Keep up the good work!!
         </Step>
       </ul>
       <Divider />
