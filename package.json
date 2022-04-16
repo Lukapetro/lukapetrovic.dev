@@ -42,5 +42,6 @@
     "singleQuote": true,
     "tabWidth": 2,
     "trailingComma": "none"
-  }
+  },
+  "version": "0.1.0"
 }
