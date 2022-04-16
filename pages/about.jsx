@@ -6,8 +6,9 @@ export default function About() {
     <Container pageTitle="About Me">
       <div className="mb-8 prose leading-6 text-gray-600 dark:text-gray-400">
         <p>
-          Hi, I'm Luka. I am a fullstack developer. Currently I work at Amaris
-          as a Senior Consultant.
+          Hi, I'm Luka. I am a fullstack developer. Currently I work at FACEIT
+          as a Senior Software Engineer. I Also collaborate as a freelancer with
+          Playtomic and BeConcept Studio.
         </p>
         <p>
           I grew up in San Benedetto del Tronto and did computer engineering at
