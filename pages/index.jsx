@@ -3,6 +3,7 @@ import Image from 'next/image';
 import ProjectCard from 'components/home/ProjectCard';
 import ShowAllButton from 'components/home/ShowAllButton';
 import Skills from 'components/home/Skills';
+import GithubContributions from 'components/home/GithubContributions';
 
 export default function Home() {
   return (
@@ -57,6 +58,11 @@ export default function Home() {
         />
       </div>
       <ShowAllButton title="Show all projects" href={'/projects'} />
+
+      <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-8 text-black dark:text-white mt-12">
+        Contributions
+      </h3>
+      <GithubContributions />
 
       {/* <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-16 text-black dark:text-white">
         Posts
