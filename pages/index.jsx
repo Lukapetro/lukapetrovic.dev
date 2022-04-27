@@ -60,7 +60,7 @@ export default function Home() {
       <ShowAllButton title="Show all projects" href={'/projects'} />
 
       <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-8 text-black dark:text-white mt-12">
-        Contributions
+        Github Contributions
       </h3>
       <GithubContributions />
 
