@@ -6,6 +6,8 @@ import Skills from 'components/home/Skills';
 import GithubContributions from 'components/home/GithubContributions';
 
 export default function Home() {
+  console.log(` ${process.env.NEXT_PUBLIC_APP_VERSION}`);
+
   return (
     <Container>
       <div className="flex flex-col-reverse sm:flex-row items-start w-full">
