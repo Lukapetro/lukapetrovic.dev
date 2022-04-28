@@ -15,9 +15,6 @@ export default function Changelog({ changelogs }) {
           This changelog is meant to be a roadmap for all the changes made to
           this portfolio.
         </p>
-        <p className="text-gray-600 dark:text-gray-400 mb-8">
-          App version: {process.env.NEXT_PUBLIC_APP_VERSION}
-        </p>
         <ul>
           {changelogs.map((changelog) => (
             <ChangelogCard key={changelog.title} {...changelog} />
