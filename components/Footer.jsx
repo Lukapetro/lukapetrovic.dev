@@ -69,7 +69,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="text-gray-500 text-xs pb-8 text-center flex justify-center">
-        Made with ❤️ - app version: {publicRuntimeConfig?.version}
+        Made with ❤️ - Version: {publicRuntimeConfig?.version}
       </div>
     </footer>
   );
