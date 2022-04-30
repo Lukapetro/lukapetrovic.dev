@@ -28,7 +28,7 @@ export default function Changelog({ changelogs }) {
 export async function getStaticProps() {
   const changelogs = allChangelogs
     .map((changelog) => pick(changelog, ['title', 'body']))
-    .sort((a, b) => Number(new Date(a.title)) - Number(new Date(b.title)))
+    .sort((a, b) => new Date(a.title) - new Date(b.title))
     .reverse();
 
   return { props: { changelogs } };
