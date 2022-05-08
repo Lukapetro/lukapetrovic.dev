@@ -1,6 +1,6 @@
 import BlogPost from 'components/BlogPost';
 import Container from 'components/Container';
-import { allBlogs } from '.contentlayer/data';
+import { allBlogs } from '.contentlayer/generated';
 import { pick } from 'contentlayer/client';
 
 export default function Blog({ posts }) {

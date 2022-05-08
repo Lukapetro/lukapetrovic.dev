@@ -1,6 +1,6 @@
 import ChangelogCard from 'components/ChangelogCard';
 import Container from 'components/Container';
-import { allChangelogs } from '.contentlayer/data';
+import { allChangelogs } from '.contentlayer/generated';
 import { pick } from 'contentlayer/client';
 
 export default function Changelog({ changelogs }) {

@@ -1,5 +1,5 @@
 import ProjectLayout from 'layouts/project';
-import { allProjects } from '.contentlayer/data';
+import { allProjects } from '.contentlayer/generated';
 import components from 'components/MDXComponents';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 

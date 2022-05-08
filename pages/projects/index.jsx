@@ -1,15 +1,7 @@
 import Container from 'components/Container';
 import ProjectCard from 'components/ProjectCard';
-import { allProjects } from '.contentlayer/data';
+import { allProjects } from '.contentlayer/generated';
 import { pick } from 'contentlayer/client';
-
-// const gradientList = [
-//   'bg-gradient-to-r from-[#ff9966] via-[#ec38bc] to-[#ff5e62]',
-//   'bg-gradient-to-r from-[#8360c3] to-[#2ebf91]',
-//   'bg-gradient-to-r from-[#40E0D0]  to-[#FF0080]',
-//   'bg-gradient-to-r from-[#3494E6] to-[#EC6EAD]',
-//   'bg-gradient-to-r from-[#40E0D0] via-[#FF8C00] to-[#FF0080]'
-// ];
 
 const gradientList = [
   'bg-gradient-to-r from-yellow-400 to-pink-500',
