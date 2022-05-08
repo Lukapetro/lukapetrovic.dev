@@ -5,5 +5,5 @@
       "contentlayer/generated": ["./.contentlayer/generated"]
     }
   },
-  "include": ["**/*.jsx", "**/*.js", ".contentlayer/generated"]
+  "include": [".contentlayer/generated"]
 }
