@@ -21,6 +21,7 @@
     "react-github-calendar": "^3.3.1",
     "react-icons": "^4.3.1",
     "react-tooltip": "^4.2.21",
+    "sharp": "^0.30.4",
     "swr": "^1.1.2",
     "use-delayed-render": "^0.0.7"
   },
