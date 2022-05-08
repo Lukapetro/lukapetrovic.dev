@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+node_modules
 
 # testing
 /coverage
@@ -11,6 +12,7 @@
 # next.js
 /.next/
 /out/
+.next
 
 # production
 /build
@@ -18,6 +20,7 @@
 # misc
 .DS_Store
 *.pem
+*.log
 
 # debug
 npm-debug.log*
@@ -33,10 +36,6 @@ yarn-error.log*
 
 # vercel
 .vercel
-
-# typescript
-*.tsbuildinfo
-
 
 # Contentlayer
 .contentlayer
