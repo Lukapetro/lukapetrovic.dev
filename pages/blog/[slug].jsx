@@ -1,5 +1,5 @@
 import BlogLayout from 'layouts/blog';
-import { allBlogs } from '.contentlayer/data';
+import { allBlogs } from '.contentlayer/generated';
 import components from 'components/MDXComponents';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 

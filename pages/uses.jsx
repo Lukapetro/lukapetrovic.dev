@@ -1,5 +1,5 @@
 import Container from 'components/Container';
-import { allUses } from '.contentlayer/data';
+import { allUses } from '.contentlayer/generated';
 import components from 'components/MDXComponents';
 import { pick } from 'contentlayer/client';
 import { useMDXComponent } from 'next-contentlayer/hooks';
