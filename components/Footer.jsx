@@ -58,9 +58,9 @@ export default function Footer() {
               Projects
             </a>
           </Link>
-          {/* <Link href="/blog">
+          <Link href="/blog">
             <a className="text-gray-500 hover:text-gray-600 transition">Blog</a>
-          </Link> */}
+          </Link>
           <Link href="/changelog">
             <a className="text-gray-500 hover:text-gray-600 transition">
               Changelog
