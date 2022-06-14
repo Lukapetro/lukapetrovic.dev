@@ -1,16 +1,6 @@
 import getConfig from 'next/config';
 import Link from 'next/link';
-
-const ExternalLink = ({ href, children }) => (
-  <a
-    className="text-gray-500 hover:text-gray-600 transition"
-    target="_blank"
-    rel="noopener noreferrer"
-    href={href}
-  >
-    {children}
-  </a>
-);
+import ExternalLink from './ExternalLink';
 
 export default function Footer() {
   const { publicRuntimeConfig } = getConfig();
@@ -39,13 +29,24 @@ export default function Footer() {
           </Link> */}
         </div>
         <div className="flex flex-col space-y-4">
-          <ExternalLink href="https://www.linkedin.com/in/lucapetro/">
+          <ExternalLink
+            href="https://www.linkedin.com/in/lucapetro/"
+            className="text-gray-500 hover:text-gray-600 transition"
+          >
             Linkedin
           </ExternalLink>
-          <ExternalLink href="https://github.com/Lukapetro">
+          <ExternalLink
+            className="text-gray-500 hover:text-gray-600 transition"
+            href="https://github.com/Lukapetro"
+          >
             GitHub
           </ExternalLink>
-          <ExternalLink href="https://read.cv/lukapetro">Resume</ExternalLink>
+          <ExternalLink
+            className="text-gray-500 hover:text-gray-600 transition"
+            href="https://read.cv/lukapetro"
+          >
+            Resume
+          </ExternalLink>
           {/* <Link href="/privacy">
             <a className="text-gray-500 hover:text-gray-600 transition">
               Privacy

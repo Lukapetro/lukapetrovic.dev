@@ -102,7 +102,7 @@ const SkillCard = ({ name, icon, color, href }) => (
       color
     )}
   >
-    <div className="flex justify-center items-center px-4 py-2 border-2 border-gray-300 bg-color dark:border-gray-600 rounded-md flex justify-center items-center">
+    <div className="flex justify-center items-center px-4 py-2 border-2 border-gray-300 bg-color dark:border-gray-600 rounded-md">
       {icon}
       <p className="ml-2">{name}</p>
     </div>
