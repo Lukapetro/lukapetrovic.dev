@@ -4,8 +4,12 @@ import ProjectCard from 'components/home/ProjectCard';
 import ShowAllButton from 'components/home/ShowAllButton';
 import Skills from 'components/home/Skills';
 import GithubContributions from 'components/home/GithubContributions';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 export default function Home() {
+  const { t } = useTranslation('common');
+
   return (
     <Container>
       <div className="flex flex-col-reverse sm:flex-row items-start w-full">
@@ -73,3 +77,9 @@ export default function Home() {
     </Container>
   );
 }
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common', 'footer']))
+  }
+});

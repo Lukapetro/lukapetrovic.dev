@@ -1,9 +1,11 @@
 import getConfig from 'next/config';
 import Link from 'next/link';
 import ExternalLink from './ExternalLink';
+import { useTranslation } from 'next-i18next';
 
 export default function Footer() {
   const { publicRuntimeConfig } = getConfig();
+  const { t } = useTranslation('footer');
 
   return (
     <footer className="flex flex-col justify-center items-start max-w-2xl mx-auto w-full mb-4">
@@ -71,6 +73,7 @@ export default function Footer() {
       </div>
       <div className="text-gray-500 text-xs pb-8 text-center flex justify-center">
         Made with ❤️ - Version: {publicRuntimeConfig?.version}
+        <p>{t('description')}</p>
       </div>
     </footer>
   );

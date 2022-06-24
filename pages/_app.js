@@ -2,6 +2,7 @@ import 'styles/globals.css'
 
 import Maintenance from './maintenance';
 import { ThemeProvider } from 'next-themes';
+import { appWithTranslation } from 'next-i18next';
 
 function MyApp({ Component, pageProps }) {
   if (process.env.NEXT_PUBLIC_MAINTENANCE === 'true') {
@@ -14,4 +15,4 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default MyApp
+export default appWithTranslation(MyApp)
