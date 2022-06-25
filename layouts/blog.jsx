@@ -51,7 +51,7 @@ export default function BlogLayout({ children, post }) {
           {children}
         </div>
       </article>
-      <div className="flex w-full justify-between items-center">
+      <div className="flex w-full justify-between items-end">
         <ClapsButton slug={post.slug} />
         <KofiButton />
       </div>
