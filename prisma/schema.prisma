@@ -6,11 +6,15 @@ generator client {
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
-  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
   referentialIntegrity = "prisma"
 }
 
 model views {
+  slug  String @id @db.VarChar(128)
+  count BigInt @default(1)
+}
+
+model claps {
   slug  String @id @db.VarChar(128)
   count BigInt @default(1)
 }

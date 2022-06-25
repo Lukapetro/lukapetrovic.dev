@@ -3,6 +3,8 @@ import { format, parseISO } from 'date-fns';
 import Container from 'components/Container';
 import Image from 'next/image';
 import KofiButton from '../components/KofiButton';
+import ClapsButton from '../components/ClapsButton';
+import ViewCounter from 'components/ViewCounter';
 
 export default function BlogLayout({ children, post }) {
   return (
@@ -13,7 +15,7 @@ export default function BlogLayout({ children, post }) {
       date={new Date(post.publishedAt).toISOString()}
       type="article"
     >
-      <article className="flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-12">
+      <article className="flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-10">
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
           {post.title}
         </h1>
@@ -40,17 +42,19 @@ export default function BlogLayout({ children, post }) {
             </p>
           </div>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-400 min-w-32 md:mt-0">
-            {` • `}
             {post.readingTime.text}
-
-            {/* <ViewCounter slug={post.slug} /> */}
+            {` • `}
+            <ViewCounter slug={post.slug} />
           </p>
         </div>
         <div className="w-full mt-4 prose dark:prose-dark max-w-none">
           {children}
         </div>
       </article>
-      <KofiButton />
+      <div className="flex w-full justify-between items-center">
+        <ClapsButton slug={post.slug} />
+        <KofiButton />
+      </div>
     </Container>
   );
 }

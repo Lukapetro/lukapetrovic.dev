@@ -37,9 +37,12 @@ export default function Container(params) {
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"
-          content={`https://lukapetro.io${router.asPath}`}
+          content={`https://lukapetrovic.dev${router.asPath}`}
         />
-        <link rel="canonical" href={`https://lukapetro.io${router.asPath}`} />
+        <link
+          rel="canonical"
+          href={`https://lukapetrovic.dev${router.asPath}`}
+        />
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="Luka Petrovic" />
         <meta property="og:description" content={meta.description} />

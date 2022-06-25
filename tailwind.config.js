@@ -25,6 +25,7 @@ module.exports = {
           900: '#111111'
         }
       },
+
       typography: (theme) => ({
         DEFAULT: {
           css: {
@@ -90,7 +91,16 @@ module.exports = {
             }
           }
         }
-      })
+      }),
+      keyframes: {
+        wiggle: {
+          "0%, 100%": { transform: "rotate(-7deg)" },
+          "50%": { transform: "rotate(7deg)" }
+        },
+      },
+      animation: {
+        wiggle: "wiggle 200ms ease-in-out"
+      }
     },
   },
   variants: {

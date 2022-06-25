@@ -27,10 +27,9 @@ export default function Menu() {
   return (
     <div className="ml-[-0.60rem]">
       <MobileMenu />
-      {/* <MobileMenu /> */}
       <NavItem href="/" text="Home" />
       <NavItem href="/projects" text="Projects" />
-      {/* <NavItem href="/blog" text="Blog" /> */}
+      <NavItem href="/blog" text="Blog" />
       <NavItem href="/about" text="About" />
     </div>
   );
