@@ -1,12 +1,11 @@
 import Link from 'next/link';
-//import { Views } from 'lib/types';
-//import fetcher from 'lib/fetcher';
-//import useSWR from 'swr';
+import useSWR from 'swr';
+import fetcher from 'utils/fetcher';
 
 export default function BlogPost({ title, summary, slug }) {
-  // const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
-  //const views = data?.total;
-  const views = 10;
+  const { data } = useSWR(`/api/views/${slug}`, fetcher);
+  const views = data?.total;
+
   return (
     <Link href={`/blog/${slug}`}>
       <a className="w-full">

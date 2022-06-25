@@ -1,24 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import useSWR from 'swr';
 import fetcher from 'utils/fetcher';
 
 export default function ClapsButton({ slug }) {
   const { data } = useSWR(`/api/claps/${slug}`, fetcher);
-  const initialClaps = new Number(data?.total);
+  const initialClaps = useMemo(() => new Number(data?.total || 0), [data]);
 
   const [claps, setClaps] = useState(initialClaps);
   const [effect, setEffect] = useState(false);
 
+  useEffect(() => {
+    setClaps(initialClaps);
+  }, [initialClaps]);
+
   const handleClick = () => {
     setEffect(true);
     setClaps(claps + 1);
-  };
+    const registerClap = () =>
+      fetch(`/api/claps/${slug}`, {
+        method: 'POST'
+      });
 
-  if (isNaN(initialClaps)) return null;
+    registerClap();
+  };
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <p className="text-gray-500 text-sm ">{claps}</p>
+      <p className="text-gray-500 text-sm ">
+        {`${claps > 0 ? claps.toLocaleString() : 0}`}
+      </p>
       <button
         className={`${
           effect && 'animate-wiggle'
