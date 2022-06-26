@@ -9,7 +9,7 @@
     "cm": "cz",
     "prisma:studio": "npx prisma studio",
     "prisma:migrate": "npx prisma db push",
-    "prisma:local": "pscale connect lukapetrovic main --port 3309"
+    "prisma:staging": "pscale connect lukapetrovic staging --port 3309"
   },
   "dependencies": {
     "@prisma/client": "^3.15.2",
