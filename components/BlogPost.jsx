@@ -20,7 +20,7 @@ export default function BlogPost({ title, summary, slug, tags }) {
   );
 
   return (
-    <div className="rounded-xl shadow-lg bg-gray-800 border border-gray-700 w-full px-6 pt-4 pb-2">
+    <div className="rounded-xl shadow-lg bg-gray-800 border border-gray-700 w-full px-6 pt-4 pb-2 mb-4">
       <Link href={`/blog/${slug}`}>
         <div className="font-bold text-xl mb-2 hover:cursor-pointer">
           {title}
