@@ -3,13 +3,13 @@
     {
       "title": "web3",
       "color": "text-yellow-500",
-      "bgHover": "hover:bg-yellow-700",
+      "bgHover": "hover:bg-yellow-100 dark:hover:bg-yellow-700",
       "border": "hover:border-yellow-400"
     },
     {
       "title": "blockchain",
       "color": "text-red-500",
-      "bgHover": "hover:bg-red-700",
+      "bgHover": "hover:bg-red-100 dark:hover:bg-red-700",
       "border": "hover:border-red-400"
     }
   ]

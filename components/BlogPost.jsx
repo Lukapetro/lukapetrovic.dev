@@ -20,7 +20,7 @@ export default function BlogPost({ title, summary, slug, tags }) {
   );
 
   return (
-    <div className="rounded-xl shadow-lg bg-gray-800 border border-gray-700 w-full px-6 pt-4 pb-2 mb-4">
+    <div className="rounded-xl shadow-lg bg-gray-100 dark:bg-gray-800 border-gray-200 border dark:border-gray-700 w-full px-6 pt-4 pb-2 mb-4">
       <Link href={`/blog/${slug}`}>
         <div className="font-bold text-xl mb-2 hover:cursor-pointer">
           {title}
@@ -33,7 +33,7 @@ export default function BlogPost({ title, summary, slug, tags }) {
             <Link key={tag.title} href={`/blog/tags/${tag.title}`}>
               <div
                 className={cn(
-                  'rounded p-1 hover:cursor-pointer border border-transparent ',
+                  'rounded p-1 hover:cursor-pointer first:-ml-1 border border-transparent ',
                   tag.bgHover,
                   tag.border
                 )}
