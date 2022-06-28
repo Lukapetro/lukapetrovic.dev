@@ -1,47 +1,62 @@
 import Link from 'next/link';
 import useSWR from 'swr';
 import fetcher from 'utils/fetcher';
-import { GrFormView as EyeIcon } from 'react-icons/gr';
+import { HiEye as EyeIcon } from 'react-icons/hi';
+import cn from 'classnames';
+import ALL_TAGS from '../utils/Tags.json';
+import { useMemo } from 'react';
+import Emoji from './Emoji';
+import pluralize from '../utils/pluralize';
 
 export default function BlogPost({ title, summary, slug, tags }) {
   const { data } = useSWR(`/api/views/${slug}`, fetcher);
+  const { data: clapsData } = useSWR(`/api/claps/${slug}`, fetcher);
   const views = data?.total;
+  const claps = clapsData?.total;
+
+  const getTags = useMemo(
+    () => ALL_TAGS.tags.filter((tag) => tags.includes(tag.title)),
+    [tags]
+  );
 
   return (
-    <div className="rounded shadow-lg bg-gray-600">
-      <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">{title}</div>
-        <p className="text-gray-700 text-base">{summary}</p>
-      </div>
-      <div className="px-6 pt-4 pb-2">
-        {tags.map((tag) => (
-          <span
-            key={tag}
-            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-          >
-            #{tag}
-          </span>
-        ))}
-        <p className="text-gray-500 text-sm flex">
-          <EyeIcon className="h-5 w-5 mr-2" />
-          {`${views ? new Number(views).toLocaleString() : '–––'} views`}
-        </p>
+    <div className="rounded-xl shadow-lg bg-gray-800 border border-gray-700 w-full px-6 pt-4 pb-2">
+      <Link href={`/blog/${slug}`}>
+        <div className="font-bold text-xl mb-2 hover:cursor-pointer">
+          {title}
+        </div>
+      </Link>
+      <p className="text-gray-400 text-base">{summary}</p>
+      <div className="my-2">
+        <div className="flex">
+          {getTags.map((tag) => (
+            <Link key={tag.title} href={`/blog/tags/${tag.title}`}>
+              <div
+                className={cn(
+                  'rounded p-1 hover:cursor-pointer',
+                  tag.bgHover,
+                  tag.border
+                )}
+              >
+                <span className={tag.color}>#</span>
+                <span className="text-sm">{tag.title}</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+        <div className="flex mt-2">
+          <p className="text-gray-500 text-sm flex mr-4 items-center">
+            <EyeIcon className="h-4 w-4 mr-2 text-gray-400	" />
+            {pluralize(views, 'view')}
+          </p>
+          <div className="flex items-center">
+            <Emoji label="clap" symbol="👏" className="mr-2" />
+            <p className="text-gray-500 text-sm flex ">
+              {pluralize(claps, 'clap')}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-    // <Link href={`/blog/${slug}`}>
-    //   <a className="w-full">
-    //     <div className="w-full mb-8">
-    //       <div className="flex flex-col justify-between md:flex-row">
-    //         <h4 className="w-full mb-2 text-lg font-bold text-gray-900 md:text-xl dark:text-gray-100">
-    //           {title}
-    //         </h4>
-    //         <p className="w-32 mb-4 text-left text-gray-500 md:text-right md:mb-0">
-    //           {`${views ? new Number(views).toLocaleString() : '–––'} views`}
-    //         </p>
-    //       </div>
-    //       <p className="text-gray-600 dark:text-gray-400">{summary}</p>
-    //     </div>
-    //   </a>
-    // </Link>
   );
 }

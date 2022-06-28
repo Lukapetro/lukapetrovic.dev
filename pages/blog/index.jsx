@@ -11,9 +11,11 @@ export default function Blog({ posts }) {
           There are no posts.
         </p>
       )}
-      {posts.map((post) => (
-        <BlogPost key={post.title} {...post} />
-      ))}
+      <div className="mt-4 w-full">
+        {posts.map((post) => (
+          <BlogPost key={post.title} {...post} />
+        ))}
+      </div>
     </Container>
   );
 }

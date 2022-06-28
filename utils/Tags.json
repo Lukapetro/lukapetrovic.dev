@@ -1,0 +1,16 @@
+{
+  "tags": [
+    {
+      "title": "web3",
+      "color": "text-yellow-500",
+      "bgHover": "hover:bg-yellow-700",
+      "border": "hover:border border-yellow-400"
+    },
+    {
+      "title": "blockchain",
+      "color": "text-red-500",
+      "bgHover": "hover:bg-red-700",
+      "border": "hover:border border-red-400"
+    }
+  ]
+}
