@@ -1,9 +1,9 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function ShowAllButton({ href, title }) {
   return (
     <Link href={href}>
-      <a className="flex mt-8 text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all h-6">
+      <a className="flex mt-8 text-gray-600 dark:text-gray-400 leading-7 rounded-lg hover:text-gray-800 dark:hover:text-gray-200 transition-all h-6 items-center">
         {title}
         <svg
           xmlns="http://www.w3.org/2000/svg"

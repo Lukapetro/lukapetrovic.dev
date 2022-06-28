@@ -33,13 +33,13 @@ export default function BlogPost({ title, summary, slug, tags }) {
             <Link key={tag.title} href={`/blog/tags/${tag.title}`}>
               <div
                 className={cn(
-                  'rounded p-1 hover:cursor-pointer',
+                  'rounded p-1 hover:cursor-pointer border border-transparent ',
                   tag.bgHover,
                   tag.border
                 )}
               >
                 <span className={tag.color}>#</span>
-                <span className="text-sm">{tag.title}</span>
+                <span className="text-sm font-light">{tag.title}</span>
               </div>
             </Link>
           ))}
