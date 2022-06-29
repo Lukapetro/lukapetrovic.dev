@@ -12,7 +12,7 @@ export default function TagsCard({ tag, count }) {
         <Link href={`/blog/tags/${tag.title}`}>
           <div
             className={cn(
-              'rounded flex p-1 hover:cursor-pointer first:-ml-1 border border-transparent ',
+              'rounded flex p-1 hover:cursor-pointer first:-ml-1 border border-transparent w-fit px-2',
               tag.bgHover,
               tag.border
             )}

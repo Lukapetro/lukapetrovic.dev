@@ -19,10 +19,10 @@ export default function Home() {
             <Image src="/faceit.svg" alt="FACEIT" height={18} width={18} />
           </h2>
           <p className="text-gray-600 dark:text-gray-400">
-            Fullstack developer currently in Italy 🇮🇹 .
+            Fullstack Javascript developer in Italy 🇮🇹 .
           </p>
-          <p className="text-gray-600 dark:text-gray-400 mb-16">
-            Problem solver. Javascript enthusiast.
+          <p className="text-gray-600 dark:text-gray-400 mb-12">
+            Learning Blockchain, Solidity &amp; Web3 🔥 .
           </p>
         </div>
         <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto">
