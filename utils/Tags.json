@@ -2,15 +2,21 @@
   "tags": [
     {
       "title": "web3",
+      "subTitle": "Internet owned by users",
       "color": "text-yellow-500",
-      "bgHover": "hover:bg-yellow-100 dark:hover:bg-yellow-700",
-      "border": "hover:border-yellow-400"
+      "bgHover": "hover:bg-yellow-100 dark:hover:bg-yellow-700 hover:border-yellow-400",
+      "border": "hover:border-yellow-400",
+      "borderTop": "border-t-yellow-500",
+      "icon": "web3.png"
     },
     {
       "title": "blockchain",
+      "subTitle": "Digital, distributed, and decentralized ledger",
       "color": "text-red-500",
       "bgHover": "hover:bg-red-100 dark:hover:bg-red-700",
-      "border": "hover:border-red-400"
+      "border": "hover:border-red-400",
+      "borderTop": "border-t-red-500",
+      "icon": "blockchain.png"
     }
   ]
 }
