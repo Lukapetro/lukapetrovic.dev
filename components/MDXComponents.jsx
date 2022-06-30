@@ -1,4 +1,3 @@
-import Badge from 'components/Badge';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -23,8 +22,7 @@ function RoundedImage(props) {
 
 const MDXComponents = {
   Image: RoundedImage,
-  a: CustomLink,
-  Badge
+  a: CustomLink
 };
 
 export default MDXComponents;

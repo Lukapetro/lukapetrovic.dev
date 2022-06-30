@@ -5,6 +5,7 @@ import Image from 'next/image';
 import KofiButton from '../components/KofiButton';
 import ClapsButton from '../components/ClapsButton';
 import ViewCounter from 'components/ViewCounter';
+import TagsList from 'components/tags/TagsList';
 
 export default function BlogLayout({ children, post }) {
   return (
@@ -16,17 +17,15 @@ export default function BlogLayout({ children, post }) {
       type="article"
     >
       <article className="flex flex-col items-start justify-center w-full max-w-2xl mx-auto mb-10">
-        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
+        <h1 className="mb-2 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
           {post.title}
         </h1>
-        <h2 className="text-gray-500 mb-4">{post.summary}</h2>
-        <Image
-          alt="LP"
-          height={375}
-          width={685}
-          src={post.image}
-          className="mt-4"
-        />
+        <h2 className="text-gray-500">{post.summary}</h2>
+
+        <div className="my-2">
+          <TagsList tags={post.tags} />
+        </div>
+        <Image alt="image" height={375} width={685} src={post.image} />
         <div className="flex flex-col items-start justify-between w-full mt-2 md:flex-row md:items-center">
           <div className="flex items-center">
             <Image

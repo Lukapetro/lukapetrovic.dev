@@ -13,7 +13,7 @@ My personal portfolio
 
 ## Overview
 
-- `data/*` - MDX data that is used for projects and changelog.
+- `data/*` - MDX data that is used for projects and blog posts.
 - `layouts/*` - The different page layouts each MDX category uses.
 - `utils/*` - A collection of helpful utilities or code for external services.
 - `pages/api/*` - [API routes](https://nextjs.org/docs/api-routes/introduction) powering post views.

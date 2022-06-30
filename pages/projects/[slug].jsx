@@ -17,15 +17,33 @@ export default function ProjectPage({ project }) {
   );
 }
 
-export async function getStaticPaths() {
+export async function getStaticPaths({ locales }) {
+  const paths = [];
+  allProjects.forEach((project) => {
+    const slug = project.slug;
+
+    paths.push({
+      params: {
+        slug
+      },
+      locale: project.locale
+    });
+  });
+
   return {
-    paths: allProjects.map((s) => ({ params: { slug: s.slug } })),
+    paths,
     fallback: false
   };
 }
 
-export async function getStaticProps({ params }) {
-  const project = allProjects.find((project) => project.slug === params.slug);
+export async function getStaticProps({ params, locale }) {
+  const projectsLocale = allProjects.filter(
+    (project) => project.locale === locale
+  );
+
+  const project = projectsLocale.find(
+    (project) => project.slug === params.slug
+  );
 
   return { props: { project } };
 }

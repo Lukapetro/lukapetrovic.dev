@@ -1,0 +1,153 @@
+---
+title: 'lukapetrovic.dev'
+description: 'Portfolio personale.'
+locale: it
+---
+
+<Image
+  alt={`lukapetro.io`}
+  src={`/static/images/banner.png`}
+  width={1000}
+  height={525}
+  priority
+/>
+
+[lukapetrovic.dev](https://www.lukapetrovic.dev/) wants to be my personal space in the infinite web.
+Here I'll tell about the projects I develop, about my life and maybe some articles in the tech world.
+
+> This portfolio is open source 🔥 link at the bottom
+
+## Table of Contents
+
+1.  [The 5 Ws (and 1 H)](/projects/lukapetrovic#the-5-ws-and-1-h)
+2.  [Tech Stack](/projects/lukapetrovic#tech-stack)
+3.  [Overview](/projects/lukapetrovic#overview)
+4.  [Snippets](/projects/lukapetrovic#snippets)
+5.  [Conclusion](/projects/lukapetrovic#conclusion)
+6.  [Inspiration](/projects/lukapetrovic#inspiration)
+
+## The 5 Ws (and 1 H)
+
+The [**Five Ws and one H**](https://www.workfront.com/blog/project-management-101-the-5-ws-and-1-h-that-should-be-asked-of-every-project) are questions whose answers are considered basic in information-gathering.
+They constitute a formula for getting the complete story on a subject.
+
+So without further ado, here we go:
+
+- **Who**: well no doubt it's about me 😎
+- **What**: as obvious as it is, the purpose of this portfolio is to showcase my technical skills, projects I've contributed to and a bit of my personal life
+- **When**: this portfolio was born in 2017. At the end of 2021 I decided to give it a more modern and fresh look ( as we will see in the [tech stack](/projects/lukapetrovic#tech-stack))
+  and I recreated the entire web page with the intention of maintaining it over time without an expiration date
+- **Where**: 🌎
+- **Why**: well mainly it's to avoid answering always the same questions like: what technologies do you work with? what projects have you developed? etc.. I simply send the link and woilà, the game is done
+- **How**: TLDR [React](https://reactjs.org/). All details in the section below ⬇️
+
+## Tech Stack
+
+This portfolio initially created in 2017 was born with [gatsby](https://www.gatsbyjs.com/).
+
+After deciding I wanted to start from scratch and having followed the evolution of react frameworks,
+the decision came by itself. Here is how I developed the whole thing:
+
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Database**: [PlanetScale](https://planetscale.com)
+- **ORM**: [Prisma](https://prisma.io/)
+- **Deployment**: [Vercel](https://vercel.com)
+- **Content**: [MDX](https://github.com/mdx-js/mdx)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+
+## Overview
+
+<Image
+  alt={`lukapetro.io`}
+  src={`/static/images/lukapetrovic/lukapetro-scaffolding.png`}
+  width={901}
+  height={225}
+/>
+
+In the image above we see the folder structure of the project. Looking at it in detail here is what we find:
+
+- `data/*` - MDX data that is used for projects and blog posts.
+- `layouts` - The different page layouts each MDX category uses.
+- `utils` - A collection of helpful utilities or code for external services.
+- `pages/api/*` - [API routes](https://nextjs.org/docs/api-routes/introduction) powering project views.
+- `pages/projects` - [Personal projects](https://www.lukapetrovic.dev/projects).
+- `pages/*` - All other static pages.
+- `prisma/*` - My Prisma schema, which uses a PlanetScale MySQL database.
+- `public/*` - Static assets including fonts and images.
+- `styles/*` - A small amount of global styles. I'm mostly using vanilla Tailwind CSS.
+
+## Snippets
+
+Some code snippets that may be of interest.
+
+Many of the contents of this portfolio are mdx files; To render a mdx content i used the [Contentlayer](https://www.npmjs.com/package/contentlayer) library.
+Contentlayer turns your content into data - making it super easy to import MD(X) and CMS content in your app.
+
+```jsx
+const { withContentlayer } = require('next-contentlayer');
+
+module.exports = withContentlayer()({
+  // Your Next.js config...
+});
+```
+
+Once we know how to properly render MD(X) content, Next.js will pre-render this page at build time using the props returned by
+[getStaticProps](https://nextjs.org/docs/basic-features/data-fetching/get-static-props).
+
+```jsx
+export async function getStaticProps(context) {
+  return {
+    props: {} // will be passed to the page component as props
+  };
+}
+```
+
+Another interesting feature is the count of project views.
+
+To do this I used [Prisma](https://www.prisma.io/) + [SWR](https://www.npmjs.com/package/swr).
+Here is an example of how the ViewCounter works.
+
+```jsx
+export default function ViewCounter({ slug }) {
+  const { data } = useSWR(`/api/views/${slug}`, fetcher);
+  const views = new Number(data?.total);
+
+  useEffect(() => {
+    const registerView = () =>
+      fetch(`/api/views/${slug}`, {
+        method: 'POST'
+      });
+
+    registerView();
+  }, [slug]);
+
+  return <span>{`${views > 0 ? views.toLocaleString() : '–––'} views`}</span>;
+}
+```
+
+## Conclusion
+
+I had a lot of fun developing this portfolio. I've been wanting to do something with [Next.js](https://nextjs.org/) and [Tailwind](https://tailwindcss.com/) for quite some time, so I jumped at the chance.
+
+If you like the project I leave attached the link to the Github repo, you can clone/fork it, just make sure to remove all my personal data 😝
+
+[All the code here](https://github.com/Lukapetro/lukapetro.io)
+
+Ps: feel free to leave a star, thanks ⭐
+
+## Inspiration
+
+There are quite a bunch of portfolios I've been inspired by, I'll mention a few:
+
+- [Jahir Fiquitiva](https://jahir.dev/)
+- [Cassie Evans](https://www.cassie.codes/)
+- [Josh W Comeau](https://www.joshwcomeau.com/)
+- [Jared Palmer](https://jaredpalmer.com/)
+- [Fernando Paredes](https://fdp.io/)
+- [Lee Robinson](https://leerob.io/)
+- [Dan Holloran](https://danholloran.me/)
+- [Nikolai Bain](https://www.nikolaibain.com/)
+
+---
+
+_Special thanks to [Lucia Talamonti](https://read.cv/luciatalamonti) for helping me make stylistic choices on this portfolio_

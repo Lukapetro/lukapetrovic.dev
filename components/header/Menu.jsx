@@ -2,6 +2,7 @@ import MobileMenu from './MenuMobile';
 import NextLink from 'next/link';
 import cn from 'classnames';
 import { useRouter } from 'next/router';
+import useTranslation from 'next-translate/useTranslation';
 
 function NavItem({ href, text }) {
   const router = useRouter();
@@ -24,11 +25,13 @@ function NavItem({ href, text }) {
 }
 
 export default function Menu() {
+  const { t } = useTranslation('common');
+
   return (
     <div className="ml-[-0.60rem]">
       <MobileMenu />
       <NavItem href="/" text="Home" />
-      <NavItem href="/projects" text="Projects" />
+      <NavItem href="/projects" text={t('projects')} />
       <NavItem href="/blog" text="Blog" />
       <NavItem href="/about" text="About" />
     </div>

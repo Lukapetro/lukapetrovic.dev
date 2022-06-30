@@ -2,6 +2,7 @@ import Container from 'components/Container';
 import ProjectCard from 'components/ProjectCard';
 import { allProjects } from '.contentlayer/generated';
 import { pick } from 'contentlayer/client';
+import useTranslation from 'next-translate/useTranslation';
 
 const gradientList = [
   'bg-gradient-to-r from-yellow-400 to-pink-500',
@@ -11,16 +12,17 @@ const gradientList = [
 ];
 
 export default function Projects({ projects }) {
+  const { t } = useTranslation('projects');
+
   return (
     <Container
-      pageTitle="Projects"
+      pageTitle={t('common:projects')}
       title="Progetti – Luka Petrovic"
       description="Projects developed with Javascript"
     >
-      <div className="mb-8">
+      <div className="mb-8 w-full">
         <p className="text-gray-600 dark:text-gray-400 mb-8">
-          This is a collection of some of my works and projects I made
-          throughout the years.
+          {t('thisIsACollection')}
         </p>
         <div className="grid w-full grid-cols-1 gap-4 my-2 mt-4 sm:grid-cols-1">
           {projects.map((project, index) => (
@@ -38,14 +40,26 @@ export default function Projects({ projects }) {
   );
 }
 
-export async function getStaticProps() {
-  const publishedProjects = allProjects.filter(
-    (project) => project.isPublished
+export async function getStaticProps({ locale }) {
+  const projectsLocale = allProjects.filter(
+    (project) => project.locale === locale
   );
 
-  const projects = publishedProjects.map((project) =>
+  const projects = projectsLocale.map((project) =>
     pick(project, ['slug', 'title', 'description'])
   );
 
   return { props: { projects } };
 }
+
+// export const getStaticProps = async ({ locale }) => {
+//   const language = await import(`../locales/${locale}.json`);
+//   const blogs = getBlogsInformation(locale);
+
+//   return {
+//     props: {
+//       lngDict: language.default,
+//       blogs,
+//     },
+//   };
+// };

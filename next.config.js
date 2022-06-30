@@ -1,5 +1,6 @@
 const { withContentlayer } = require('next-contentlayer');
 const { version } = require('./package.json');
+const nextTranslate = require('next-translate')
 
 const nextconfig = {
   disableImportAliasWarning: true,
@@ -8,6 +9,10 @@ const nextconfig = {
   publicRuntimeConfig: {
     version,
   },
+  i18n: {
+    locales: ['en', 'it'],
+    defaultLocale: 'en',
+  },
 }
 
-module.exports = withContentlayer(nextconfig)
+module.exports = nextTranslate(withContentlayer(nextconfig))

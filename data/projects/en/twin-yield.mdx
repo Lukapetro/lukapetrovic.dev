@@ -1,0 +1,200 @@
+---
+title: 'Twin Yield'
+description: 'People-based portfolio.'
+locale: en
+---
+
+<Image
+  alt={`Twin-yield`}
+  src={`/static/images/twin-yield/twin-yield-banner.png`}
+  width={16}
+  height={9}
+  layout="responsive"
+  priority
+/>
+
+It was 2017 when [Simone](https://www.instagram.com/simone_fedi) started a master thesis project in finance on the professional use of Copy-Trading.
+The results were amazing, so much so that he decided to invest his savings in it.
+
+> All investment strategies and investments involve risk of loss. Nothing contained in this website should be construed as investment advice.
+
+## Table of Contents
+
+1.  [What is Twin Yield?](/projects/twin-yield#what-is-twin-yield)
+2.  [Let's shoot some numbers](/projects/twin-yield#lets-shoot-some-numbers)
+3.  [Tech Stack](/projects/twin-yield#tech-stack)
+4.  [Frontend](/projects/twin-yield#frontend)
+5.  [Backend](/projects/twin-yield#backend)
+6.  [Dev Ops](/projects/twin-yield#dev-ops)
+7.  [Conclusion](/projects/twin-yield#conclusion)
+8.  [Resources](/projects/twin-yield#resources)
+
+## What is Twin Yield?
+
+Twin Yield is an algorithm. Unlike the usual investment funds where portfolios made up of assets and stocks are built, twin yield builds a people-based portfolio.
+
+By analyzing huge amounts of traders (returns, risks, statistics, correlations etc...) and cross-referencing the data,
+investment portfolios are generated based on them.
+
+The skimming is done on several levels, going to refine the list of possible "good" traders with a top-down approach.
+
+Finally, after giving the algorithm the traders' data, the investment portfolio is generated, and through the [copy-trading](https://en.wikipedia.org/wiki/Copy_trading) functionality,
+the trades of the promoted traders are copied 1-1.
+
+## Let's shoot some numbers
+
+I currently have to obscure this part, as the project is evolving rapidly and I am not allowed to share such data for now.
+
+## Tech Stack
+
+Currently twin yield has an administrator interface where data collection operations are performed and analyses are launched.
+Obviously most of the work is done on the backend, from data collection, to processing and filtering and then being fed to the algorithm.
+
+To set up this structure the technology stack is:
+
+- [React](https://it.reactjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [NodeJS](https://nodejs.org/it/)
+- [Express](https://expressjs.com/)
+- [MongoDB](https://www.mongodb.com/)
+
+Let's see in detail frontend and backend in the next paragraphs.
+
+## Frontend
+
+<a aria-label="twin-yield dashboard" href="https://twinyield.app/">
+  <Image
+    alt={`Twin-yield-dashboard`}
+    src={`/static/images/twin-yield/twin-yield-home.png`}
+    width={1024}
+    height={576}
+    layout="responsive"
+  />
+</a>
+
+> The image above has fake data. Real data are private.
+
+[React](https://it.reactjs.org/) has been used as a library for GUI development.
+The operations performed on the admin interface are currently carried out on a weekly basis,
+which does not require any particular state management requirements.
+
+[Typescript](https://www.typescriptlang.org/) was another addition to this project. Working with a huge amount of data,
+it becomes critical type-checking the data to ensure it is correct.
+
+### FE Libraries
+
+- [Chakra Ui](https://chakra-ui.com/)
+  is a simple, modular and accessible component library.
+
+- [Framer motion](https://www.framer.com/motion/)
+  open source production-ready motion library for bringing some animations.
+
+  Here is a custom spinner made with this amazing library:
+
+```jsx
+import { motion } from 'framer-motion';
+
+export const MyComponent = () => (
+  <motion.div
+    animate={{
+      scale: [1, 2, 2, 1, 1],
+      rotate: [0, 0, 270, 270, 0],
+      borderRadius: ['20%', '20%', '50%', '50%', '20%']
+    }}
+  />
+);
+```
+
+- [React Query](https://react-query.tanstack.com/)
+  for fetching, caching and updating data.
+
+```jsx
+export function useGetAnalysis() {
+  const axios = useAxios();
+
+  return useQuery('analysis', async () => {
+    const { data } = await axios.get('/analysis');
+    return data;
+  });
+}
+```
+
+## Backend
+
+The heart of twin yield resides in the backend. We can divide the backend into 2 distinct sections:
+
+- Bot: scheduled periodically to retrieve updated data. If the job fails for any reason, an emailed report is generated with details.
+  If, on the other hand, the data recovery is successful, it is inserted into the database.
+
+- [NodeJS](https://nodejs.org/it/) + [Express](https://expressjs.com/) for the server: here the data is retrieved from
+  the database and processed and then fed to the algorithm.
+
+### BE Libraries
+
+The list of the libraries to use is quite articulated, I quote the 5 that I consider most important and key for the project:
+
+- [Puppeteer](https://www.npmjs.com/package/puppeteer) is a Node library which provides a high-level API to control Chrome or Chromium over the DevTools Protocol.
+
+- [Cheerio](https://www.npmjs.com/package/cheerio) a fast & flexible implementation of jQuery designed specifically for the server.
+
+```jsx
+const cheerio = require('cheerio');
+const $ = cheerio.load('<h2 class="title">Hello world</h2>');
+
+$('h2.title').text('Hello there!');
+```
+
+- [Joi](https://www.npmjs.com/package/joi) powerful schema description language and data validator for JavaScript.
+
+```jsx
+const Joi = require('joi');
+
+const schema = Joi.object({
+  username: Joi.string().alphanum().min(3).max(30).required()
+});
+```
+
+- [Mongoose](https://mongoosejs.com/) that provide a straight-forward, schema-based solution to model your application data.
+
+```jsx
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/test');
+
+const Cat = mongoose.model('Cat', { name: String });
+
+const kitty = new Cat({ name: 'Zildjian' });
+kitty.save().then(() => console.log('meow'));
+```
+
+- [Winston](https://www.npmjs.com/package/winston) as a logger for just about everything.
+
+## Dev Ops
+
+To deploy the application I used 3 different platforms:
+
+- [Netlify](https://www.netlify.com/) for the client.
+- [Heroku](https://www.heroku.com/) for the server.
+- [MongoDB Atlas](https://www.mongodb.com/atlas) for the database.
+
+## Conclusion
+
+Twin yield is a unique project. The challenges faced in building the [data scraping](https://en.wikipedia.org/wiki/Web_scraping) bot were not easy,
+and when things get difficult I can give it my best shot 😎
+
+Everything is working for the moment, but this project has become like a game of cat and mouse, and sometimes you're the cat, sometimes you're the mouse.
+
+The code repo is private, as I am not the sole owner of the algorithms used and I was not given consent to share it.
+
+## Resources
+
+- [Web App ](https://twinyield.app/)
+  > Under development
+- [Instagram page](https://www.instagram.com/twinyield/)
+
+---
+
+_Thanks to
+[Simone Fedi](https://www.instagram.com/simone_fedi/),
+[Luca Vignoni](https://www.instagram.com/luca.vignoni8/),
+[Giulio Roscigno](https://www.instagram.com/giulio_roscigno/)
+for contributing to this project._
