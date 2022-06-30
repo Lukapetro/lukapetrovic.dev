@@ -52,14 +52,14 @@ const Blog = defineDocumentType(() => ({
 
 const Project = defineDocumentType(() => ({
   name: 'Project',
-  filePathPattern: 'projects/*.mdx',
+  filePathPattern: 'projects/**/*.mdx',
   bodyType: 'mdx',
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
     description: { type: 'string', required: true },
-    isPublished: { type: 'string', required: true },
     color: { type: 'string' },
+    locale: { type: 'string', required: true }
   },
   computedFields
 }));
@@ -86,8 +86,6 @@ const Uses = defineDocumentType(() => ({
   },
   computedFields
 }));
-
-
 
 const contentLayerConfig = makeSource({
   contentDirPath: 'data',

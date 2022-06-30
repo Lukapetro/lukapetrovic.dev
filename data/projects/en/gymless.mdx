@@ -1,0 +1,181 @@
+---
+title: '#Gymless'
+description: 'Basically everywhere.'
+locale: en
+---
+
+<Image
+  alt={`#Gymless`}
+  src={`/static/images/gymless/gymless-banner.png`}
+  width={1000}
+  height={525}
+  priority
+/>
+
+[Gymless](https://www.facebook.com/Gymlessitalia/) is born almost as a game at the beginning of the Covid epidemic and is the most concrete example of how to move forward when everything seems to stop.
+
+> Note: This project is currently inactive
+
+## Table of Contents
+
+1.  [What is Gymless?](/projects/gymless#what-is-gymless)
+2.  [From Gym to Gymless](/projects/gymless#from-gym-to-gymless)
+3.  [Tech Stack](/projects/gymless#tech-stack)
+4.  [Frontend](/projects/gymless#frontend)
+5.  [Backend](/projects/gymless#backend)
+6.  [Dev Ops](/projects/gymless#dev-ops)
+7.  [Conclusion](/projects/gymless#conclusion)
+8.  [Resources](/projects/gymless#resources)
+
+## What is Gymless?
+
+A few days after the news of the Covid emergency and consequently of the closed gyms, a friend of mine who was a personal trainer,
+[Davide](https://www.instagram.com/davidegattitrainer/), contacted some of his clients for a special class out of town,
+precisely in the City Life neighborhood of Milan.
+
+All it took was a bit of word of mouth to bring many gym lovers to the classes
+organized by Gymless, and overnight they created groups of more than 30 people eager to resume their daily workouts.
+
+## From Gym to Gymless
+
+Due to strong demand, Gymless was born. Groups of people training in the open air in a format where you alternate between grounded
+and cardio phases and enjoy the open spaces the city is rich in.
+
+To organize this, I developed a management-style web app where trainers can
+create workout classes and enrolled users can sign up.
+
+## Tech Stack
+
+The technology stack that I have chosen for the development of gymless is:
+
+- [React](https://it.reactjs.org/)
+- [NodeJS](https://nodejs.org/it/)
+- [GraphQL](https://graphql.org/)
+- [PostgreSQL](https://www.postgresql.org/)
+
+## Frontend
+
+<Image
+  alt={`#Gymless`}
+  src={`/static/images/gymless/gymless-login.png`}
+  width={700}
+  height={480}
+/>
+
+As mentioned in the technology stack, I used [react](https://it.reactjs.org/) for frontend development.
+For the application state management I decided to use [Apollo](https://www.apollographql.com/)
+since I opted to use a server with [graphQL](https://graphql.org/). [Material UI](https://mui.com/) was my pick as the UI
+library for React components.
+
+The frontend is divided into 2 macro-sections:
+
+- **Admin section**
+
+  The admin section allowed trainers to create, edit and delete workouts. Through a dashboard they had a generic overview
+  of the progress of the various classes and the number of registered users. They also had access to the archive of past classes,
+  where they could view all the data related to that workout.
+
+- **User section**
+
+  The user section allowed the registration to the created classes.
+  To enroll it was necessary to pay an entrance fee. The payment flow was managed with [Paypal](https://www.paypal.com/)
+  or with credit card through the [Stripe API](https://stripe.com/).
+
+## Backend
+
+As mentioned in the previous section, [NodeJS](https://nodejs.org/it/) with Graphql was the main choice for the backend. In its first version Gymless
+was a simple online booking application, with scaling and evolution capabilities.
+The choice was made keeping this possibility in mind and knowing the advantages offered by this architecture:
+
+- Good fit for complex systems and microservices
+- Fetching data with a single API call.
+- No over- and under-fetching problems.
+- Tailoring requests to your needs.
+- API evolution without versioning.
+- Rapid application prototyping.
+
+> Note: the project needed to be out in the market as soon as possible, and this stack allowed to develop a prototype application very quickly.
+
+### Libraries worth mentioning
+
+Here are some of the libraries used for development:
+
+- [Apollo Server](https://www.apollographql.com/docs/apollo-server/)
+  is an open-source, spec-compliant GraphQL server that's compatible with any GraphQL client
+
+- [Bcryptjs](https://www.npmjs.com/package/bcryptjs)
+  used for storing passwords as hashed passwords instead of plaintext.
+
+```jsx
+var salt = bcrypt.genSaltSync(10);
+var hash = bcrypt.hashSync('B4c0//', salt);
+```
+
+- [Jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) -
+  An open standard used to share security information between two parties — a client and a server
+
+- [Stripe](https://stripe.com/) -
+  Service API that allows developers to accept payments online.
+
+```js
+const stripe = require('stripe')('secret_key');
+
+const paymentIntent = await stripe.paymentIntents.create({
+  amount: 2000,
+  currency: 'usd',
+  payment_method_types: ['card']
+});
+```
+
+- [Passport](https://www.passportjs.org/) is authentication middleware for Node.js. Mainly used for Facebook-strategy.
+
+- [Prisma](https://www.prisma.io/) - Node.js and TypeScript ORM
+
+  Here is a simple example of how a table was structured in the DB
+
+```js
+model User {
+  id         Int      @id @default(autoincrement())
+  email      String   @unique
+  name       String?
+  workouts   Workout[]?
+}
+```
+
+## Dev Ops
+
+To deploy the application I used 3 different platforms:
+
+- [Netlify](https://www.netlify.com/) for the client.
+- [Heroku](https://www.heroku.com/) for the server.
+- [AWS](https://aws.amazon.com/it/rds/postgresql/) for the database.
+
+The pipeline included 3 main environments:
+
+1. Development
+2. Test
+3. Production
+
+## Conclusion
+
+Create gymless was a great experience. For the first time alone I found myself managing all aspects of
+the application lifecycle, from choosing the technology stack, to interface design and db schema definition,
+to testing and deployment.
+
+I vividly remember the moments before the live release and the announcement on the Instagram page, a unique mix of
+emotions. Seeing users register and book classes without bugs or crashes was the most satisfying thing 😍.
+
+All developed code is public in [my GitHub repo](https://github.com/Lukapetro/gymless-server).
+
+## Resources
+
+- [Facebook page](https://www.facebook.com/Gymlessitalia/)
+- [Instagram profile](https://www.instagram.com/gymlessitalia/?hl=it)
+- [Youtube profile](https://www.youtube.com/channel/UCAnrqpeEJBwHj8VVE8b_YwA)
+- [The blonde salad](https://theblondesalad.com/lifestyle/gymless-liniziativa-nata-per-provare-che-a-milano-non-si-ferma-nulla-nemmeno-il-workout/)
+
+---
+
+_Thanks to [Davide Gatti](https://www.instagram.com/davidegattitrainer/),
+[Sara Calvanese](https://www.instagram.com/sara.calvanese_videomaker/) and
+[Mattia Coppini](https://www.instagram.com/mattiacoppini21/?) for creating and believing in the project._

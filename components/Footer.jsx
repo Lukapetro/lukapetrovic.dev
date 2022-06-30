@@ -1,9 +1,11 @@
+import useTranslation from 'next-translate/useTranslation';
 import getConfig from 'next/config';
 import Link from 'next/link';
 import ExternalLink from './ExternalLink';
 
 export default function Footer() {
   const { publicRuntimeConfig } = getConfig();
+  const { t } = useTranslation('common');
 
   return (
     <footer className="flex flex-col justify-center items-start max-w-2xl mx-auto w-full mb-4">
@@ -56,7 +58,7 @@ export default function Footer() {
         <div className="flex flex-col space-y-4">
           <Link href="/projects">
             <a className="text-gray-500 hover:text-gray-600 transition">
-              Projects
+              {t('projects')}
             </a>
           </Link>
           <Link href="/blog">

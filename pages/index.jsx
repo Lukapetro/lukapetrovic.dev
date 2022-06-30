@@ -4,8 +4,11 @@ import ProjectCard from 'components/home/ProjectCard';
 import ShowAllButton from 'components/home/ShowAllButton';
 import Skills from 'components/home/Skills';
 import GithubContributions from 'components/home/GithubContributions';
+import useTranslation from 'next-translate/useTranslation';
 
 export default function Home() {
+  const { t } = useTranslation('home');
+
   return (
     <Container>
       <div className="flex flex-col-reverse sm:flex-row items-start w-full">
@@ -14,15 +17,15 @@ export default function Home() {
             Luka Petrovic
           </h1>
           <h2 className="text-gray-700 dark:text-gray-200 mb-4">
-            Senior Software Engineer at{' '}
+            {t('seniorSoftwareEngineer')}{' '}
             <span className="font-semibold">FACEIT </span>
             <Image src="/faceit.svg" alt="FACEIT" height={18} width={18} />
           </h2>
           <p className="text-gray-600 dark:text-gray-400">
-            Fullstack Javascript developer in Italy 🇮🇹 .
+            {t('fullstackDeveloper')} 🇮🇹 .
           </p>
           <p className="text-gray-600 dark:text-gray-400 mb-12">
-            Learning Blockchain, Solidity &amp; Web3 🔥 .
+            {t('learning')} Blockchain, Solidity &amp; Web3 🔥 .
           </p>
         </div>
         <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto">
@@ -43,7 +46,7 @@ export default function Home() {
       </div>
 
       <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-8 text-black dark:text-white mt-12">
-        Projects
+        {t('common:projects')}
       </h3>
       <div className="flex gap-6 flex-col md:flex-col w-full">
         <ProjectCard
@@ -57,19 +60,11 @@ export default function Home() {
           slug="gymless"
         />
       </div>
-      <ShowAllButton title="Show all projects" href={'/projects'} />
-
+      <ShowAllButton title={t('showAllProjects')} href={'/projects'} />
       <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-8 text-black dark:text-white mt-12">
         Github Contributions
       </h3>
       <GithubContributions />
-
-      {/* <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-16 text-black dark:text-white">
-        Posts
-      </h3>
-      <PostCard index="01" href="/" length="20/01/2022" title="Post 1" />
-      <PostCard index="02" href="/" length="20/01/2022" title="Post 2" />
-      <ShowAllButton title="Mostra tutti i post" href={"/blog"} /> */}
     </Container>
   );
 }
