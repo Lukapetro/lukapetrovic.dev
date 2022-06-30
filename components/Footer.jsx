@@ -67,11 +67,6 @@ export default function Footer() {
           <Link href="/blog/tags">
             <a className="text-gray-500 hover:text-gray-600 transition">Tags</a>
           </Link>
-          <Link href="/changelog">
-            <a className="text-gray-500 hover:text-gray-600 transition">
-              Changelog
-            </a>
-          </Link>
         </div>
       </div>
       <div className="text-gray-300 dark:text-gray-700 text-xs pb-8 text-center flex justify-center">
