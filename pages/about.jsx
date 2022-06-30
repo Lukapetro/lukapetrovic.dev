@@ -7,7 +7,7 @@ export default function About() {
     <Container pageTitle="About Me">
       <div className="mb-8 prose leading-6 text-gray-600 dark:text-gray-400">
         <p>
-          Hi, I'm Luka. I am a fullstack developer. Currently I work at{' '}
+          Hi, I&apos;m Luka. I am a fullstack developer. Currently I work at{' '}
           <ExternalLink
             href="https://www.faceit.com/"
             className="text-inherit hover:text-gray-800 dark:hover:text-gray-500"

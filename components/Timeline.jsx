@@ -46,8 +46,8 @@ const FullTimeline = () => (
     <Year>2016</Year>
     <ul>
       <Step title="Finishing university 🎓">
-        It's been an adventure of ups and downs where I've learned a lot of
-        things and met fantastic people.
+        It&apos;s been an adventure of ups and downs where I&apos;ve learned a
+        lot of things and met fantastic people.
       </Step>
       <Step title="Full-Time in Capgemini">
         I was offered and accepted a full-time opportunity with Capgemini. My
@@ -146,7 +146,7 @@ export default function Timeline() {
           investments with different algorithms. Guess what my role is!
         </Step>
         <Step title="Bought my first car 🏎️">
-          Who wants to get around on foot? I don't. In addition, the heated
+          Who wants to get around on foot? I don&apos;t. In addition, the heated
           seats in winter are the top.
         </Step>
       </ul>
