@@ -22,10 +22,10 @@ export default function Home() {
             <Image src="/faceit.svg" alt="FACEIT" height={18} width={18} />
           </h2>
           <p className="text-gray-600 dark:text-gray-400">
-            {t('fullstackDeveloper')} 🇮🇹 .
+            {t('fullstackDeveloper')} 🇮🇹
           </p>
           <p className="text-gray-600 dark:text-gray-400 mb-12">
-            {t('learning')} Blockchain, Solidity &amp; Web3 🔥 .
+            {t('learning')} Blockchain, Solidity &amp; Web3 🔥
           </p>
         </div>
         <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto">
