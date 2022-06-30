@@ -1,6 +1,5 @@
 import {
   defineDocumentType,
-  defineNestedType,
   makeSource
 } from 'contentlayer/source-files';
 
@@ -10,14 +9,6 @@ import rehypeCodeTitles from 'rehype-code-titles';
 import rehypePrism from 'rehype-prism-plus';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
-
-const Tag = defineNestedType(() => ({
-  name: 'Tag',
-  fields: {
-    title: { type: 'string', required: true },
-    color: { type: 'string' }
-  },
-}))
 
 const computedFields = {
   readingTime: { type: 'json', resolve: (doc) => readingTime(doc.body.raw) },
@@ -33,7 +24,7 @@ const computedFields = {
 
 const Blog = defineDocumentType(() => ({
   name: 'Blog',
-  filePathPattern: 'blog/*.mdx',
+  filePathPattern: 'blog/**/*.mdx',
   bodyType: 'mdx',
   contentType: 'mdx',
   fields: {
@@ -41,6 +32,7 @@ const Blog = defineDocumentType(() => ({
     publishedAt: { type: 'string', required: true },
     summary: { type: 'string', required: true },
     image: { type: 'string', required: true },
+    locale: { type: 'string', required: true },
     tags: {
       type: 'list',
       of: { type: 'string' },

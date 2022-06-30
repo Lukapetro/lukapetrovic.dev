@@ -40,8 +40,10 @@ export default function Blog({ posts }) {
   );
 }
 
-export async function getStaticProps() {
-  const posts = allBlogs.map((post) =>
+export async function getStaticProps({ locale }) {
+  const postsLocale = allBlogs.filter((post) => post.locale === locale);
+
+  const posts = postsLocale.map((post) =>
     pick(post, ['slug', 'title', 'summary', 'publishedAt', 'tags'])
   );
 

@@ -18,14 +18,28 @@ export default function Post({ post }) {
 }
 
 export async function getStaticPaths() {
+  const paths = [];
+  allBlogs.forEach((post) => {
+    const slug = post.slug;
+
+    paths.push({
+      params: {
+        slug
+      },
+      locale: post.locale
+    });
+  });
+
   return {
-    paths: allBlogs.map((p) => ({ params: { slug: p.slug } })),
+    paths,
     fallback: false
   };
 }
 
-export async function getStaticProps({ params }) {
-  const post = allBlogs.find((post) => post.slug === params.slug);
+export async function getStaticProps({ params, locale }) {
+  const postsLocale = allBlogs.filter((post) => post.locale === locale);
+
+  const post = postsLocale.find((post) => post.slug === params.slug);
 
   return { props: { post } };
 }

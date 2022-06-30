@@ -51,15 +51,3 @@ export async function getStaticProps({ locale }) {
 
   return { props: { projects } };
 }
-
-// export const getStaticProps = async ({ locale }) => {
-//   const language = await import(`../locales/${locale}.json`);
-//   const blogs = getBlogsInformation(locale);
-
-//   return {
-//     props: {
-//       lngDict: language.default,
-//       blogs,
-//     },
-//   };
-// };
