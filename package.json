@@ -6,7 +6,6 @@
     "start": "next start",
     "lint": "next lint",
     "husky-install": "husky install",
-    "cm": "cz",
     "prisma:studio": "npx prisma studio",
     "prisma:migrate": "npx prisma db push",
     "prisma:staging": "pscale connect lukapetrovic staging --port 3309"
@@ -37,9 +36,6 @@
     "@commitlint/config-conventional": "^17.0.3",
     "@tailwindcss/typography": "^0.5.1",
     "autoprefixer": "^10.4.7",
-    "commitizen": "^4.2.4",
-    "commitlint-config-gitmoji": "^2.2.5",
-    "cz-customizable": "^6.3.0",
     "eslint": "^8.18.0",
     "eslint-config-next": "^12.1.6",
     "husky": "^8.0.1",

@@ -1,4 +1,3 @@
-//import Image from 'next/image';
 import cn from 'classnames';
 import Link from 'next/link';
 import pluralize from 'utils/pluralize';
@@ -29,14 +28,6 @@ export default function TagsCard({ tag, count }) {
           {pluralize(count, 'post')} published
         </p>
       </div>
-
-      {/* <Image
-        alt="tagImg"
-        height={15}
-        width={15}
-        src={`/static/images/tags/${tag.icon}`}
-        className="rounder-full"
-      /> */}
     </div>
   );
 }

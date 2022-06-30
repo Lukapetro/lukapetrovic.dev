@@ -41,18 +41,9 @@ export default function Projects({ projects }) {
 }
 
 export async function getStaticProps({ locale }) {
-  console.log('locale', locale);
-
-  console.log('allProjects', allProjects);
-
-  // const projects = allProjects.map((project) =>
-  //   pick(project, ['slug', 'title', 'description'])
-  // );
-
   const projectsLocale = allProjects.filter(
     (project) => project.locale === locale
   );
-  console.log('projectsLocale', projectsLocale);
 
   const projects = projectsLocale.map((project) =>
     pick(project, ['slug', 'title', 'description'])
