@@ -27,20 +27,22 @@ export default function BlogTag({ posts, tag }) {
   );
 }
 
-export async function getStaticProps({ params: { tag } }) {
-  const posts = allBlogs.filter((post) => {
-    return post.tags.includes(tag);
-  });
-
-  return { props: { posts, tag } };
-}
-
 export async function getStaticPaths() {
   let paths = [];
 
   allBlogs.map((post) =>
-    post.tags.map((tag) => paths.push({ params: { tag } }))
+    post.tags.map((tag) => paths.push({ params: { tag }, locale: post.locale }))
   );
 
   return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params: { tag }, locale }) {
+  const postsLocale = allBlogs.filter((post) => post.locale === locale);
+
+  const posts = postsLocale.filter((post) => {
+    return post.tags.includes(tag);
+  });
+
+  return { props: { posts, tag } };
 }
