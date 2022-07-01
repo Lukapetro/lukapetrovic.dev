@@ -8,7 +8,8 @@
     "husky-install": "husky install",
     "prisma:studio": "npx prisma studio",
     "prisma:migrate": "npx prisma db push",
-    "prisma:staging": "pscale connect lukapetrovic staging --port 3309"
+    "prisma:staging": "pscale connect lukapetrovic staging --port 3309",
+    "prettier": "prettier --ignore-path .prettierignore --write ."
   },
   "dependencies": {
     "@prisma/client": "^3.15.2",
@@ -42,6 +43,7 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "postcss": "^8.4.13",
+    "prettier": "^2.7.1",
     "prisma": "^3.15.2",
     "reading-time": "^1.5.0",
     "rehype": "^12.0.0",

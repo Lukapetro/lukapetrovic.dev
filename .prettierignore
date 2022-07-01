@@ -1,2 +1,18 @@
 .next
 .vercel
+node_modules
+.DS_Store
+static
+public/
+.github/
+.babelrc
+README.md
+
+# ignore deployment files
+/.now
+/.serverless
+/.serverless_nextjs
+/.vercel
+.vercel
+.now
+.env
