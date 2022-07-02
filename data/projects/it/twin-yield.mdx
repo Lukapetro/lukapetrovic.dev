@@ -13,44 +13,49 @@ locale: it
   priority
 />
 
-It was 2017 when [Simone](https://www.instagram.com/simone_fedi) started a master thesis project in finance on the professional use of Copy-Trading.
-The results were amazing, so much so that he decided to invest his savings in it.
+Era il 2017 quando [Simone](https://www.instagram.com/simone_fedi) iniziò un progetto di tesi magistrale in finanza sull'utilizzo professionale del Copy-Trading.
+I risultati furono sorprendenti, tanto che decise di investirci i suoi risparmi.
 
-> All investment strategies and investments involve risk of loss. Nothing contained in this website should be construed as investment advice.
+> Tutte le strategie di investimento e gli investimenti comportano un rischio di perdita. Nulla di quanto contenuto in questo sito web deve essere interpretato come un consiglio di investimento.
 
-## Table of Contents
+## Indice
 
-1.  [What is Twin Yield?](/projects/twin-yield#what-is-twin-yield)
-2.  [Let's shoot some numbers](/projects/twin-yield#lets-shoot-some-numbers)
+1.  [Cos'è Twin Yield?](/projects/twin-yield#cosè-twin-yield)
+2.  [Spariamo qualche numero](/projects/twin-yield#spariamo-qualche-numero)
 3.  [Tech Stack](/projects/twin-yield#tech-stack)
 4.  [Frontend](/projects/twin-yield#frontend)
 5.  [Backend](/projects/twin-yield#backend)
 6.  [Dev Ops](/projects/twin-yield#dev-ops)
-7.  [Conclusion](/projects/twin-yield#conclusion)
-8.  [Resources](/projects/twin-yield#resources)
+7.  [Conclusione](/projects/twin-yield#conclusione)
+8.  [Risorse](/projects/twin-yield#risorse)
 
-## What is Twin Yield?
+## Cos'è Twin Yield?
 
-Twin Yield is an algorithm. Unlike the usual investment funds where portfolios made up of assets and stocks are built, twin yield builds a people-based portfolio.
+Twin Yield è un algoritmo. A differenza dei soliti fondi d'investimento in cui si costruiscono portafogli
+composti da azioni, Twin Yield costruisce un portafoglio basato sulle persone.
 
-By analyzing huge amounts of traders (returns, risks, statistics, correlations etc...) and cross-referencing the data,
-investment portfolios are generated based on them.
+Analizzando enormi quantità di trader (rendimenti, rischi, statistiche, correlazioni ecc.) e incrociando i dati,
+viene generato il portafoglio d'investimento con un sottostante di trader.
 
-The skimming is done on several levels, going to refine the list of possible "good" traders with a top-down approach.
+La scrematura avviene su più livelli, andando a raffinare la lista dei possibili trader "buoni" con un approccio top-down.
 
-Finally, after giving the algorithm the traders' data, the investment portfolio is generated, and through the [copy-trading](https://en.wikipedia.org/wiki/Copy_trading) functionality,
-the trades of the promoted traders are copied 1-1.
+Infine, dopo aver fornito all'algoritmo i dati dei trader, viene generato il portafoglio di investimento e,
+attraverso la funzionalità [copy-trading](https://en.wikipedia.org/wiki/Copy_trading),
+le operazioni dei trader promossi vengono copiate 1-1.
 
-## Let's shoot some numbers
+## Spariamo qualche numero
 
-I currently have to obscure this part, as the project is evolving rapidly and I am not allowed to share such data for now.
+Al momento devo oscurare questa parte, poiché il progetto si sta evolvendo rapidamente
+e per ora non mi è consentito condividere tali dati.
 
 ## Tech Stack
 
-Currently twin yield has an administrator interface where data collection operations are performed and analyses are launched.
-Obviously most of the work is done on the backend, from data collection, to processing and filtering and then being fed to the algorithm.
+Attualmente twin yield dispone di un'interfaccia admin in cui vengono eseguite le operazioni di raccolta dei dati
+e lanciate le analisi.
+Ovviamente la maggior parte del lavoro viene svolto nel backend, dalla raccolta dei dati,
+all'elaborazione e al filtraggio, per poi passare all'algoritmo dove vengono elaborati.
 
-To set up this structure the technology stack is:
+Per impostare questa struttura lo stack tecnologico è:
 
 - [React](https://it.reactjs.org/)
 - [Typescript](https://www.typescriptlang.org/)
@@ -58,7 +63,7 @@ To set up this structure the technology stack is:
 - [Express](https://expressjs.com/)
 - [MongoDB](https://www.mongodb.com/)
 
-Let's see in detail frontend and backend in the next paragraphs.
+Vediamo in dettaglio il frontend e il backend nei prossimi paragrafi.
 
 ## Frontend
 
@@ -72,24 +77,25 @@ Let's see in detail frontend and backend in the next paragraphs.
   />
 </a>
 
-> The image above has fake data. Real data are private.
+> L'immagine qui sopra contiene dati falsi. I dati reali sono privati.
 
-[React](https://it.reactjs.org/) has been used as a library for GUI development.
-The operations performed on the admin interface are currently carried out on a weekly basis,
-which does not require any particular state management requirements.
+[React](https://it.reactjs.org/) è stato utilizzato come libreria per lo sviluppo dell'interfaccia grafica.
+Le operazioni eseguite sull'interfaccia admin sono attualmente eseguite su base settimanale,
+che non richiede particolari requisiti di gestione dello stato.
 
-[Typescript](https://www.typescriptlang.org/) was another addition to this project. Working with a huge amount of data,
-it becomes critical type-checking the data to ensure it is correct.
+[Typescript](https://www.typescriptlang.org/) è stata un'altra aggiunta a questo progetto. Lavorando con un'enorme
+quantità di dati,
+di dati, diventa fondamentale effettuare il type-checking dei dati per garantirne la correttezza.
 
 ### FE Libraries
 
 - [Chakra Ui](https://chakra-ui.com/)
-  is a simple, modular and accessible component library.
+  è una libreria di componenti semplice, modulare e accessibile.
 
 - [Framer motion](https://www.framer.com/motion/)
-  open source production-ready motion library for bringing some animations.
+  libreria open source per realizzare animazioni.
 
-  Here is a custom spinner made with this amazing library:
+  Ecco uno spinner personalizzato realizzato con questa straordinaria libreria:
 
 ```jsx
 import { motion } from 'framer-motion';
@@ -106,7 +112,7 @@ export const MyComponent = () => (
 ```
 
 - [React Query](https://react-query.tanstack.com/)
-  for fetching, caching and updating data.
+  per recuperare, memorizzare nella cache e aggiornare i dati.
 
 ```jsx
 export function useGetAnalysis() {
@@ -121,21 +127,23 @@ export function useGetAnalysis() {
 
 ## Backend
 
-The heart of twin yield resides in the backend. We can divide the backend into 2 distinct sections:
+Il cuore di twin yield risiede nel backend. Possiamo dividere il backend in 2 sezioni distinte:
 
-- Bot: scheduled periodically to retrieve updated data. If the job fails for any reason, an emailed report is generated with details.
-  If, on the other hand, the data recovery is successful, it is inserted into the database.
+- Bot: programmato periodicamente per recuperare i dati aggiornati. Se il lavoro fallisce per qualsiasi motivo, viene generato
+  un report via e-mail con i dettagli.
+  Se invece il recupero dei dati ha successo, questi vengono inseriti nel database.
 
-- [NodeJS](https://nodejs.org/it/) + [Express](https://expressjs.com/) for the server: here the data is retrieved from
-  the database and processed and then fed to the algorithm.
+- [NodeJS](https://nodejs.org/it/) + [Express](https://expressjs.com/) per il server: qui i dati vengono
+  recuperati dal database e vengono elaborati, per poi essere inviati al client.
 
-### BE Libraries
+### BE Librerie
 
-The list of the libraries to use is quite articulated, I quote the 5 that I consider most important and key for the project:
+L'elenco delle librerie da utilizzare è abbastanza articolato, cito le 5 che considero più importanti e
+fondamentali per il progetto:
 
-- [Puppeteer](https://www.npmjs.com/package/puppeteer) is a Node library which provides a high-level API to control Chrome or Chromium over the DevTools Protocol.
+- [Puppeteer](https://www.npmjs.com/package/puppeteer) è una libreria Node che fornisce un'API di alto livello per controllare Chrome o Chromium attraverso il protocollo DevTools.
 
-- [Cheerio](https://www.npmjs.com/package/cheerio) a fast & flexible implementation of jQuery designed specifically for the server.
+- [Cheerio](https://www.npmjs.com/package/cheerio) un'implementazione veloce e flessibile di jQuery progettata specificamente per il server.
 
 ```jsx
 const cheerio = require('cheerio');
@@ -144,7 +152,7 @@ const $ = cheerio.load('<h2 class="title">Hello world</h2>');
 $('h2.title').text('Hello there!');
 ```
 
-- [Joi](https://www.npmjs.com/package/joi) powerful schema description language and data validator for JavaScript.
+- [Joi](https://www.npmjs.com/package/joi) potente linguaggio di descrizione degli schemi e validatore di dati per JavaScript.
 
 ```jsx
 const Joi = require('joi');
@@ -154,7 +162,7 @@ const schema = Joi.object({
 });
 ```
 
-- [Mongoose](https://mongoosejs.com/) that provide a straight-forward, schema-based solution to model your application data.
+- [Mongoose](https://mongoosejs.com/) che forniscono una soluzione semplice e basata su schemi per modellare i dati delle applicazioni.
 
 ```jsx
 const mongoose = require('mongoose');
@@ -166,35 +174,35 @@ const kitty = new Cat({ name: 'Zildjian' });
 kitty.save().then(() => console.log('meow'));
 ```
 
-- [Winston](https://www.npmjs.com/package/winston) as a logger for just about everything.
+- [Winston](https://www.npmjs.com/package/winston) come logger per quasi tutto.
 
 ## Dev Ops
 
-To deploy the application I used 3 different platforms:
+Per distribuire l'applicazione ho utilizzato 3 piattaforme diverse:
 
-- [Netlify](https://www.netlify.com/) for the client.
-- [Heroku](https://www.heroku.com/) for the server.
-- [MongoDB Atlas](https://www.mongodb.com/atlas) for the database.
+- [Netlify](https://www.netlify.com/) per il client.
+- [Heroku](https://www.heroku.com/) per il server.
+- [MongoDB Atlas](https://www.mongodb.com/atlas) per il database.
 
-## Conclusion
+## Conclusione
 
-Twin yield is a unique project. The challenges faced in building the [data scraping](https://en.wikipedia.org/wiki/Web_scraping) bot were not easy,
-and when things get difficult I can give it my best shot 😎
+Twin yield è un progetto unico. Le sfide affrontate nella costruzione del bot [data scraping](https://en.wikipedia.org/wiki/Web_scraping) non sono state facili,
+e quando le cose si fanno difficili, riesco a dare il meglio di me 😎
 
-Everything is working for the moment, but this project has become like a game of cat and mouse, and sometimes you're the cat, sometimes you're the mouse.
+Per il momento tutto funziona, ma questo progetto è diventato come un gioco del gatto e del topo, e a volte sei tu il gatto, a volte sei tu il topo.
 
-The code repo is private, as I am not the sole owner of the algorithms used and I was not given consent to share it.
+Il repo del codice è privato, poiché non sono l'unico proprietario degli algoritmi utilizzati e non mi è stato dato il consenso per condividerlo.
 
-## Resources
+## Risorse
 
 - [Web App ](https://twinyield.app/)
-  > Under development
+  > In fase di sviluppo
 - [Instagram page](https://www.instagram.com/twinyield/)
 
 ---
 
-_Thanks to
+_Grazie a
 [Simone Fedi](https://www.instagram.com/simone_fedi/),
 [Luca Vignoni](https://www.instagram.com/luca.vignoni8/),
 [Giulio Roscigno](https://www.instagram.com/giulio_roscigno/)
-for contributing to this project._
+per aver contribuito al progetto._
