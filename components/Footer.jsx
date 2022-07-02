@@ -69,9 +69,6 @@ export default function Footer() {
           </Link>
         </div>
       </div>
-      <div className="text-gray-300 dark:text-gray-700 text-xs pb-8 text-center flex justify-center">
-        Made with ❤️ - Version: {publicRuntimeConfig?.version}
-      </div>
     </footer>
   );
 }

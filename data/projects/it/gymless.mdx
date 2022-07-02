@@ -14,39 +14,39 @@ locale: it
 
 [Gymless](https://www.facebook.com/Gymlessitalia/) nasce quasi per gioco all'inizio dell'epidemia di Covid ed è l'esempio più concreto di come andare avanti quando tutto sembra fermarsi.
 
-> Note: This project is currently inactive
+> Nota: questo progetto è attualmente inattivo
 
-## Table of Contents
+## Indice
 
-1.  [What is Gymless?](/projects/gymless#what-is-gymless)
-2.  [From Gym to Gymless](/projects/gymless#from-gym-to-gymless)
-3.  [Tech Stack](/projects/gymless#tech-stack)
-4.  [Frontend](/projects/gymless#frontend)
-5.  [Backend](/projects/gymless#backend)
-6.  [Dev Ops](/projects/gymless#dev-ops)
-7.  [Conclusion](/projects/gymless#conclusion)
-8.  [Resources](/projects/gymless#resources)
+1.  [Cos'è Gymless?](/projects/gymless#cosè-gymless)
+2.  [Da Gym a Gymless](/projects/gymless#da-gym-a-gymless)
+3.  [Tech Stack](/progetti/gymless#tech-stack)
+4.  [Frontend](/progetti/gymless#frontend)
+5.  [Backend](/progetti/gymless#backend)
+6.  [Dev Ops](/progetti/gymless#dev-ops)
+7.  [Conclusione](/progetti/gymless#conclusione)
+8.  [Risorse](/progetti/gymless#risorse)
 
-## What is Gymless?
+## Cos'è Gymless?
 
-A few days after the news of the Covid emergency and consequently of the closed gyms, a friend of mine who was a personal trainer,
-[Davide](https://www.instagram.com/davidegattitrainer/), contacted some of his clients for a special class out of town,
-precisely in the City Life neighborhood of Milan.
+Pochi giorni dopo la notizia dell'emergenza Covid e di conseguenza delle palestre chiuse, un mio amico personal trainer,
+[Davide] (https://www.instagram.com/davidegattitrainer/), ha contattato alcuni suoi clienti per una lezione speciale fuori città,
+precisamente nel quartiere City Life di Milano.
 
-All it took was a bit of word of mouth to bring many gym lovers to the classes
-organized by Gymless, and overnight they created groups of more than 30 people eager to resume their daily workouts.
+È bastato un po' di passaparola per portare molti amanti della palestra ai corsi organizzati da Gymless.
+organizzati da Gymless, e da un giorno all'altro si sono creati gruppi di oltre 30 persone desiderose di riprendere i loro allenamenti quotidiani.
 
-## From Gym to Gymless
+## Da Gym a Gymless
 
-Due to strong demand, Gymless was born. Groups of people training in the open air in a format where you alternate between grounded
-and cardio phases and enjoy the open spaces the city is rich in.
+A seguito di una forte richiesta, è nata Gymless. Gruppi di persone che si allenano all'aria aperta in un format in cui si alternano fasi a terra e cardio
+e cardio, godendo degli spazi aperti di cui la città è ricca.
 
-To organize this, I developed a management-style web app where trainers can
-create workout classes and enrolled users can sign up.
+Per organizzare tutto questo, ho sviluppato una web app in stile gestionale dove gli allenatori possono
+creare classi di allenamento e gli utenti iscritti possono iscriversi.
 
 ## Tech Stack
 
-The technology stack that I have chosen for the development of gymless is:
+Lo stack tecnologico che ho scelto per lo sviluppo di gymless è:
 
 - [React](https://it.reactjs.org/)
 - [NodeJS](https://nodejs.org/it/)
@@ -62,49 +62,48 @@ The technology stack that I have chosen for the development of gymless is:
   height={480}
 />
 
-As mentioned in the technology stack, I used [react](https://it.reactjs.org/) for frontend development.
-For the application state management I decided to use [Apollo](https://www.apollographql.com/)
-since I opted to use a server with [graphQL](https://graphql.org/). [Material UI](https://mui.com/) was my pick as the UI
-library for React components.
+Come indicato nello stack tecnologico, ho utilizzato [react](https://it.reactjs.org/) per lo sviluppo del frontend.
+Per la gestione dello stato dell'applicazione ho deciso di usare [Apollo](https://www.apollographql.com/)
+poiché ho scelto di utilizzare un server con [graphQL](https://graphql.org/). Ho scelto [Material UI](https://mui.com/) come libreria UI per i componenti React.
 
-The frontend is divided into 2 macro-sections:
+Il frontend è diviso in 2 macrosezioni:
 
-- **Admin section**
+- **Sezione admin**
 
-  The admin section allowed trainers to create, edit and delete workouts. Through a dashboard they had a generic overview
-  of the progress of the various classes and the number of registered users. They also had access to the archive of past classes,
-  where they could view all the data related to that workout.
+  La sezione admin permetteva agli allenatori di creare, modificare e cancellare gli allenamenti. Tramite una dashboard avevano una panoramica generica
+  dell'andamento delle varie classi e del numero di utenti registrati. Avevano inoltre accesso all'archivio delle lezioni passate,
+  dove potevano visualizzare tutti i dati relativi a quell'allenamento.
 
-- **User section**
+- **Sezione utenti**
 
-  The user section allowed the registration to the created classes.
-  To enroll it was necessary to pay an entrance fee. The payment flow was managed with [Paypal](https://www.paypal.com/)
-  or with credit card through the [Stripe API](https://stripe.com/).
+  La sezione utenti consentiva l'iscrizione alle classi create.
+  Per iscriversi era necessario pagare una quota di iscrizione. Il flusso di pagamento era gestito con [Paypal](https://www.paypal.com/)
+  o con carta di credito tramite [Stripe API](https://stripe.com/).
 
 ## Backend
 
-As mentioned in the previous section, [NodeJS](https://nodejs.org/it/) with Graphql was the main choice for the backend. In its first version Gymless
-was a simple online booking application, with scaling and evolution capabilities.
-The choice was made keeping this possibility in mind and knowing the advantages offered by this architecture:
+Come accennato nella sezione precedente, [NodeJS](https://nodejs.org/it/) con Graphql è stata la scelta principale per il backend. Nella sua prima versione Gymless
+era una semplice applicazione di prenotazione online, con capacità di scalare ed evolvere.
+La scelta è stata fatta tenendo presente questa possibilità e conoscendo i vantaggi offerti da questa architettura:
 
-- Good fit for complex systems and microservices
-- Fetching data with a single API call.
-- No over- and under-fetching problems.
-- Tailoring requests to your needs.
-- API evolution without versioning.
-- Rapid application prototyping.
+- Si adatta bene a sistemi complessi e microservizi
+- Recupero dei dati con una singola chiamata API.
+- Nessun problema di over e under-fetching.
+- Adattamento delle richieste alle esigenze dell'utente.
+- Evoluzione dell'API senza versioning.
+- Prototipazione rapida di applicazioni.
 
-> Note: the project needed to be out in the market as soon as possible, and this stack allowed to develop a prototype application very quickly.
+> Nota: il progetto doveva essere lanciato sul mercato il prima possibile e questo stack ha permesso di sviluppare un prototipo di applicazione molto rapidamente.
 
-### Libraries worth mentioning
+### Librerie degne di nota
 
-Here are some of the libraries used for development:
+Ecco alcune delle librerie utilizzate per lo sviluppo:
 
 - [Apollo Server](https://www.apollographql.com/docs/apollo-server/)
-  is an open-source, spec-compliant GraphQL server that's compatible with any GraphQL client
+  è un server GraphQL open-source, conforme alle specifiche, compatibile con qualsiasi client GraphQL.
 
 - [Bcryptjs](https://www.npmjs.com/package/bcryptjs)
-  used for storing passwords as hashed passwords instead of plaintext.
+  utilizzata per cryptare le password e conservarle nel DB hashate anzichè in chiaro.
 
 ```jsx
 var salt = bcrypt.genSaltSync(10);
@@ -112,10 +111,10 @@ var hash = bcrypt.hashSync('B4c0//', salt);
 ```
 
 - [Jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) -
-  An open standard used to share security information between two parties — a client and a server
+  Uno standard utilizzato per condividere informazioni di sicurezza tra due parti, un client e un server.
 
 - [Stripe](https://stripe.com/) -
-  Service API that allows developers to accept payments online.
+  Servizio API che consente agli sviluppatori di accettare pagamenti online.
 
 ```js
 const stripe = require('stripe')('secret_key');
@@ -127,11 +126,11 @@ const paymentIntent = await stripe.paymentIntents.create({
 });
 ```
 
-- [Passport](https://www.passportjs.org/) is authentication middleware for Node.js. Mainly used for Facebook-strategy.
+- [Passport](https://www.passportjs.org/) è un middleware di autenticazione per Node.js. Utilizzato principalmente per la strategia di Facebook.
 
-- [Prisma](https://www.prisma.io/) - Node.js and TypeScript ORM
+- [Prisma](https://www.prisma.io/) - ORM per Node.js e TypeScript
 
-  Here is a simple example of how a table was structured in the DB
+  Ecco un semplice esempio di come è stata strutturata una tabella nel DB
 
 ```js
 model User {
@@ -144,30 +143,30 @@ model User {
 
 ## Dev Ops
 
-To deploy the application I used 3 different platforms:
+Per distribuire l'applicazione ho utilizzato 3 piattaforme diverse:
 
-- [Netlify](https://www.netlify.com/) for the client.
-- [Heroku](https://www.heroku.com/) for the server.
-- [AWS](https://aws.amazon.com/it/rds/postgresql/) for the database.
+- [Netlify](https://www.netlify.com/) per il client.
+- [Heroku](https://www.heroku.com/) per il server.
+- [AWS](https://aws.amazon.com/it/rds/postgresql/) per il database.
 
-The pipeline included 3 main environments:
+La pipeline comprendeva 3 ambienti principali:
 
-1. Development
+1. Sviluppo
 2. Test
-3. Production
+3. Produzione
 
-## Conclusion
+## Conclusione
 
-Create gymless was a great experience. For the first time alone I found myself managing all aspects of
-the application lifecycle, from choosing the technology stack, to interface design and db schema definition,
-to testing and deployment.
+Creare gymless è stata una grande esperienza. Per la prima volta da solo mi sono trovato a gestire tutti gli aspetti
+del ciclo di vita dell'applicazione, dalla scelta dello stack tecnologico, alla progettazione dell'interfaccia e alla definizione dello schema del db,
+ai test e alla distribuzione.
 
-I vividly remember the moments before the live release and the announcement on the Instagram page, a unique mix of
-emotions. Seeing users register and book classes without bugs or crashes was the most satisfying thing 😍.
+Ricordo benissimo i momenti che hanno preceduto il rilascio live e l'annuncio sulla pagina Instagram, un mix unico di
+emozioni. Vedere gli utenti registrarsi e prenotare le lezioni senza bug o crash è stata la cosa più soddisfacente 😍.
 
-All developed code is public in [my GitHub repo](https://github.com/Lukapetro/gymless-server).
+Tutto il codice sviluppato è pubblico in [questa repo GitHub](https://github.com/Lukapetro/gymless-server).
 
-## Resources
+## Risorse
 
 - [Facebook page](https://www.facebook.com/Gymlessitalia/)
 - [Instagram profile](https://www.instagram.com/gymlessitalia/?hl=it)
@@ -176,6 +175,6 @@ All developed code is public in [my GitHub repo](https://github.com/Lukapetro/gy
 
 ---
 
-_Thanks to [Davide Gatti](https://www.instagram.com/davidegattitrainer/),
-[Sara Calvanese](https://www.instagram.com/sara.calvanese_videomaker/) and
-[Mattia Coppini](https://www.instagram.com/mattiacoppini21/?) for creating and believing in the project._
+_Grazie a [Davide Gatti](https://www.instagram.com/davidegattitrainer/),
+[Sara Calvanese](https://www.instagram.com/sara.calvanese_videomaker/) e
+[Mattia Coppini](https://www.instagram.com/mattiacoppini21/?) per aver creato e creduto nel progetto._

@@ -42,7 +42,7 @@ export default function GithubContributions() {
     <GitHubCalendar
       username="lukapetro"
       transformData={selectLastHalfYear}
-      //hideTotalCount
+      hideTotalCount
       hideColorLegend
       theme={
         theme === 'dark' ? darkThemeContributions : lightThemeContributions
