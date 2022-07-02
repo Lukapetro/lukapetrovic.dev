@@ -1,3 +1,4 @@
+import useTranslation from 'next-translate/useTranslation';
 import { useState } from 'react';
 
 const Divider = () => {
@@ -108,6 +109,7 @@ const FullTimeline = () => (
 
 export default function Timeline() {
   const [isShowingFullTimeline, showFullTimeline] = useState(false);
+  const { t } = useTranslation('about');
 
   return (
     <>
@@ -116,11 +118,7 @@ export default function Timeline() {
       </h3>
       <Year>2022</Year>
       <ul>
-        <Step title="Joined Playtomic 🎾">
-          It was a crazy start to 2022. I went through a lot of selection
-          processes, and in the end I decided to play the game with the role of
-          senior frontend engineer with a winning team, vamos Playtomic!
-        </Step>
+        <Step title={t('playtomicTitle')}>{t('playtomicText')}</Step>
       </ul>
       <ul>
         <Step title="Joined BeConcept Studio 🖥️">

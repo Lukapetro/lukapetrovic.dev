@@ -1,8 +1,11 @@
 import Container from 'components/Container';
 import Timeline from 'components/Timeline';
+import useTranslation from 'next-translate/useTranslation';
 import ExternalLink from '../components/ExternalLink';
 
 export default function About() {
+  const { t } = useTranslation('about');
+
   return (
     <Container pageTitle="About Me">
       <div className="mb-8 prose leading-6 text-gray-600 dark:text-gray-400">
@@ -30,11 +33,7 @@ export default function About() {
           </ExternalLink>
           .
         </p>
-        <p>
-          I grew up in San Benedetto del Tronto and did computer engineering at
-          UNIVPM. In my free time I like to work out, play some video games and
-          spend time with my wolfdog, Blue 🐺.
-        </p>
+        <p>{t('text2')}</p>
       </div>
       <Timeline />
     </Container>

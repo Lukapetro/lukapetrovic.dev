@@ -3,8 +3,11 @@ import Container from 'components/Container';
 import { allBlogs } from '.contentlayer/generated';
 import { pick } from 'contentlayer/client';
 import Link from 'next/link';
+import useTranslation from 'next-translate/useTranslation';
 
 export default function Blog({ posts }) {
+  const { t } = useTranslation('blog');
+
   if (!posts)
     return (
       <p className="mb-4 text-gray-600 dark:text-gray-400">
@@ -28,7 +31,7 @@ export default function Blog({ posts }) {
               clipRule="evenodd"
             />
           </svg>
-          Filter by #Tags
+          {t('filterBy')} #Tags
         </a>
       </Link>
       <div className="mt-6 w-full">
