@@ -12,41 +12,42 @@ locale: it
   priority
 />
 
-[lukapetrovic.dev](https://www.lukapetrovic.dev/) wants to be my personal space in the infinite web.
-Here I'll tell about the projects I develop, about my life and maybe some articles in the tech world.
+[lukapetrovic.dev](https://www.lukapetrovic.dev/) vuole essere il mio spazio personale nell'infinito web.
+Qui racconterò dei progetti che sviluppo, parlerò un po' della mia vita e magari scriverò qualche articolo sui topic che mi interessano,
+come la tecnologia, la finanza, lo sviluppo personale e qualcosina di fitness.
 
-> This portfolio is open source 🔥 link at the bottom
+> Questo portfolio è open source 🔥 link infondo
 
-## Table of Contents
+## Indice
 
-1.  [The 5 Ws (and 1 H)](/projects/lukapetrovic#the-5-ws-and-1-h)
-2.  [Tech Stack](/projects/lukapetrovic#tech-stack)
-3.  [Overview](/projects/lukapetrovic#overview)
-4.  [Snippets](/projects/lukapetrovic#snippets)
-5.  [Conclusion](/projects/lukapetrovic#conclusion)
-6.  [Inspiration](/projects/lukapetrovic#inspiration)
+1.  [Le 5 Ws (e 1 H)](/projects/lukapetrovic-dev#le-5-ws-e-1-h)
+2.  [Tech Stack](/projects/lukapetrovic-dev#tech-stack)
+3.  [Overview](/projects/lukapetrovic-dev#overview)
+4.  [Snippets](/projects/lukapetrovic-dev#snippets)
+5.  [Conclusione](/projects/lukapetrovic-dev#conclusione)
+6.  [Ispirazione](/projects/lukapetrovic-dev#ispirazione)
 
-## The 5 Ws (and 1 H)
+## Le 5 Ws (e 1 H)
 
-The [**Five Ws and one H**](https://www.workfront.com/blog/project-management-101-the-5-ws-and-1-h-that-should-be-asked-of-every-project) are questions whose answers are considered basic in information-gathering.
-They constitute a formula for getting the complete story on a subject.
+Le [**Cinque Ws e una H**](https://www.workfront.com/blog/project-management-101-the-5-ws-and-1-h-that-should-be-asked-of-every-project) sono domande le cui risposte sono considerate fondamentali nella raccolta di informazioni.
+Costituiscono una formula per ottenere la storia completa di un argomento.
 
-So without further ado, here we go:
+Quindi, senza ulteriori indugi, eccoci qui:
 
-- **Who**: well no doubt it's about me 😎
-- **What**: as obvious as it is, the purpose of this portfolio is to showcase my technical skills, projects I've contributed to and a bit of my personal life
-- **When**: this portfolio was born in 2017. At the end of 2021 I decided to give it a more modern and fresh look ( as we will see in the [tech stack](/projects/lukapetrovic#tech-stack))
-  and I recreated the entire web page with the intention of maintaining it over time without an expiration date
-- **Where**: 🌎
-- **Why**: well mainly it's to avoid answering always the same questions like: what technologies do you work with? what projects have you developed? etc.. I simply send the link and woilà, the game is done
-- **How**: TLDR [React](https://reactjs.org/). All details in the section below ⬇️
+- **Chi**: beh, non c'è dubbio che si tratta di me 😎
+- **Cosa**: per quanto ovvio, lo scopo di questo portfolio è mostrare le mie competenze tecniche, i progetti a cui ho contribuito e un po' della mia vita personale.
+- **Quando**: questo portfolio è nato nel 2017. Alla fine del 2021 ho deciso di dargli un aspetto più moderno e fresco (come vedremo nel [tech stack](/projects/lukapetrovic-dev#tech-stack))
+  e ho ricreato l'intera pagina web con l'intenzione di mantenerla nel tempo senza una data di scadenza
+- **Dove**: 🌎
+- **Perché**: beh principalmente è per evitare di rispondere sempre alle stesse domande tipo: con quali tecnologie lavori? quali progetti hai sviluppato? ecc. Mi basta inviare il link e woilà, il gioco è fatto
+- **Come**: TLDR [React](https://reactjs.org/). Tutti i dettagli nella sezione sottostante ⬇️
 
 ## Tech Stack
 
-This portfolio initially created in 2017 was born with [gatsby](https://www.gatsbyjs.com/).
+Questo portfolio creato inizialmente nel 2017 è nato con [gatsby](https://www.gatsbyjs.com/).
 
-After deciding I wanted to start from scratch and having followed the evolution of react frameworks,
-the decision came by itself. Here is how I developed the whole thing:
+Dopo aver deciso di partire da zero e aver seguito l'evoluzione dei framework react,
+la decisione è arrivata da sola. Ecco come ho sviluppato il tutto:
 
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Database**: [PlanetScale](https://planetscale.com)
@@ -64,24 +65,24 @@ the decision came by itself. Here is how I developed the whole thing:
   height={225}
 />
 
-In the image above we see the folder structure of the project. Looking at it in detail here is what we find:
+Nell'immagine qui sopra vediamo la struttura delle cartelle del progetto. Esaminandola in dettaglio, ecco cosa troviamo:
 
-- `data/*` - MDX data that is used for projects and blog posts.
-- `layouts` - The different page layouts each MDX category uses.
-- `utils` - A collection of helpful utilities or code for external services.
-- `pages/api/*` - [API routes](https://nextjs.org/docs/api-routes/introduction) powering project views.
-- `pages/projects` - [Personal projects](https://www.lukapetrovic.dev/projects).
-- `pages/*` - All other static pages.
-- `prisma/*` - My Prisma schema, which uses a PlanetScale MySQL database.
-- `public/*` - Static assets including fonts and images.
-- `styles/*` - A small amount of global styles. I'm mostly using vanilla Tailwind CSS.
+- `data/*` - Dati MDX utilizzati per i progetti e i post del blog.
+- `layouts` - I diversi layout di pagina che ogni categoria di MDX utilizza.
+- `utils` - Una raccolta di utilità utili o di codice per servizi esterni.
+- `pages/api/*` - [rotte API](https://nextjs.org/docs/api-routes/introduction) che alimentano le viste dei progetti.
+- `pages/projects` - [Progetti personali](https://www.lukapetrovic.dev/projects).
+- `pages/*` - Tutte le altre pagine statiche.
+- `prisma/*` - Il mio schema Prisma, che usa un database MySQL PlanetScale.
+- `public/*` - Risorse statiche, compresi font e immagini.
+- `styles/*` - Una piccola quantità di stili globali. Per lo più uso il CSS di Tailwind.
 
 ## Snippets
 
-Some code snippets that may be of interest.
+Alcuni frammenti di codice che potrebbero essere interessanti.
 
-Many of the contents of this portfolio are mdx files; To render a mdx content i used the [Contentlayer](https://www.npmjs.com/package/contentlayer) library.
-Contentlayer turns your content into data - making it super easy to import MD(X) and CMS content in your app.
+Molti dei contenuti di questo portfolio sono file mdx; per rendere un contenuto mdx ho usato la libreria [Contentlayer](https://www.npmjs.com/package/contentlayer).
+Contentlayer trasforma i contenuti in dati, rendendo semplicissima l'importazione di contenuti MD(X) e CMS nella vostra applicazione.
 
 ```jsx
 const { withContentlayer } = require('next-contentlayer');
@@ -91,7 +92,7 @@ module.exports = withContentlayer()({
 });
 ```
 
-Once we know how to properly render MD(X) content, Next.js will pre-render this page at build time using the props returned by
+Una volta che sappiamo come renderizzare correttamente il contenuto di MD(X), Next.js pre-renderizzerà questa pagina in fase di compilazione, utilizzando le props restituite da
 [getStaticProps](https://nextjs.org/docs/basic-features/data-fetching/get-static-props).
 
 ```jsx
@@ -102,10 +103,10 @@ export async function getStaticProps(context) {
 }
 ```
 
-Another interesting feature is the count of project views.
+Un'altra caratteristica interessante è il conteggio delle visualizzazioni del progetto.
 
-To do this I used [Prisma](https://www.prisma.io/) + [SWR](https://www.npmjs.com/package/swr).
-Here is an example of how the ViewCounter works.
+Per farlo ho utilizzato [Prisma](https://www.prisma.io/) + [SWR](https://www.npmjs.com/package/swr).
+Ecco un esempio di come funziona il ViewCounter.
 
 ```jsx
 export default function ViewCounter({ slug }) {
@@ -125,19 +126,19 @@ export default function ViewCounter({ slug }) {
 }
 ```
 
-## Conclusion
+## Conclusione
 
-I had a lot of fun developing this portfolio. I've been wanting to do something with [Next.js](https://nextjs.org/) and [Tailwind](https://tailwindcss.com/) for quite some time, so I jumped at the chance.
+Mi sono divertito molto a sviluppare questo portfolio. Era da tempo che volevo fare qualcosa con [Next.js](https://nextjs.org/) e [Tailwind](https://tailwindcss.com/), quindi ho colto al volo l'occasione.
 
-If you like the project I leave attached the link to the Github repo, you can clone/fork it, just make sure to remove all my personal data 😝
+Se vi piace il progetto vi lascio in allegato il link alla repo di Github, potete clonarlo, assicuratevi solo di rimuovere tutti i miei dati personali 😝
 
-[All the code here](https://github.com/Lukapetro/lukapetro.io)
+[Tutto il codice qui](https://github.com/Lukapetro/lukapetro.io)
 
-Ps: feel free to leave a star, thanks ⭐
+Ps: sentitevi liberi di lasciare una stella, grazie ⭐
 
-## Inspiration
+## Ispirazione
 
-There are quite a bunch of portfolios I've been inspired by, I'll mention a few:
+Ci sono molti portfolio a cui mi sono ispirato, ne citerò alcuni:
 
 - [Jahir Fiquitiva](https://jahir.dev/)
 - [Cassie Evans](https://www.cassie.codes/)
@@ -150,4 +151,4 @@ There are quite a bunch of portfolios I've been inspired by, I'll mention a few:
 
 ---
 
-_Special thanks to [Lucia Talamonti](https://read.cv/luciatalamonti) for helping me make stylistic choices on this portfolio_
+_Un ringraziamento speciale a [Lucia Talamonti](https://read.cv/luciatalamonti) per avermi aiutato in alcune delle scelte grafiche di questo portfolio._
