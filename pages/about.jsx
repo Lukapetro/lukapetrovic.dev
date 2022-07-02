@@ -7,24 +7,24 @@ export default function About() {
   const { t } = useTranslation('about');
 
   return (
-    <Container pageTitle="About Me">
+    <Container pageTitle={t('aboutMe')}>
       <div className="mb-8 prose leading-6 text-gray-600 dark:text-gray-400">
         <p>
-          Hi, I&apos;m Luka. I am a fullstack developer. Currently I work at{' '}
+          {t('text1')}
           <ExternalLink
             href="https://www.faceit.com/"
             className="text-inherit hover:text-gray-800 dark:hover:text-gray-500"
           >
             FACEIT
-          </ExternalLink>{' '}
-          as a Senior Software Engineer. I Also collaborate as a freelancer with{' '}
+          </ExternalLink>
+          {t('text2')}
           <ExternalLink
             href="https://www.fabrick.com/it/"
             className="text-inherit hover:text-gray-800 dark:hover:text-gray-500"
           >
             Fabrick
-          </ExternalLink>{' '}
-          and{' '}
+          </ExternalLink>
+          {t('text3')}
           <ExternalLink
             href="https://www.sourcesense.com/"
             className="text-inherit hover:text-gray-800 dark:hover:text-gray-500"
@@ -33,7 +33,7 @@ export default function About() {
           </ExternalLink>
           .
         </p>
-        <p>{t('text2')}</p>
+        <p>{t('text4')}</p>
       </div>
       <Timeline />
     </Container>

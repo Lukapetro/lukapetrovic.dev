@@ -41,75 +41,50 @@ const Step = (props) => {
   );
 };
 
-const FullTimeline = () => (
-  <>
-    <Divider />
-    <Year>2016</Year>
-    <ul>
-      <Step title="Finishing university 🎓">
-        It&apos;s been an adventure of ups and downs where I&apos;ve learned a
-        lot of things and met fantastic people.
-      </Step>
-      <Step title="Full-Time in Capgemini">
-        I was offered and accepted a full-time opportunity with Capgemini. My
-        first and real work experience.
-      </Step>
-      <Step title="Transfer to Milan  🏙">
-        I moved to Milan in a classic two-room apartment. I immediately liked
-        the mood of this city.
-      </Step>
-    </ul>
-    <Divider />
-    <Year>2015</Year>
-    <ul>
-      <Step title="Erasmus in Barcelona 🔥">
-        One of the most incredible experiences I have had. 8 months
-        unforgettable in my favorite city.
-      </Step>
-    </ul>
-    <Divider />
-    <Year>2014</Year>
-    <ul>
-      <Step title="Various internships">
-        I have worked with 2 local companies to gain some experience in the
-        field. Thanks to the folks at Apio for the opportunity!
-      </Step>
-    </ul>
-    <Divider />
-    <Year>2011</Year>
-    <ul>
-      <Step title="High school graduation 🎒">
-        If I could stop time, I would stay forever in my high school days. high
-        school. Good times.
-      </Step>
-      <Step title="University start 🏫">
-        Given my high school career, math and computer science was the only way
-        to go, so go computer engineering.
-      </Step>
-      <Step title="Learned to develop ⌨️">
-        Object Oriented Programming Course. Exam based on the development of an
-        application in a team. Here is my first real experience as a developer.
-      </Step>
-    </ul>
-    <Divider />
-    <Year>1998</Year>
-    <ul>
-      <Step title="First Computer 🖥️">
-        I remember a lot of nights spent playing Final Fantasy VII and Age of
-        Empires
-      </Step>
-    </ul>
-    <Divider />
-    <Year>1993</Year>
-    <ul>
-      <Step title="Born 👶🏼 🍼">Well here I am. Hello world!</Step>
-    </ul>
-  </>
-);
-
 export default function Timeline() {
   const [isShowingFullTimeline, showFullTimeline] = useState(false);
   const { t } = useTranslation('about');
+
+  const FullTimeline = () => (
+    <>
+      <Divider />
+      <Year>2016</Year>
+      <ul>
+        <Step title={t('universityTitle')}>{t('universityText')}</Step>
+        <Step title={t('capgeminiTitle')}>{t('capgeminiText')}</Step>
+        <Step title={t('milanoTitle')}>{t('milanoText')}</Step>
+      </ul>
+      <Divider />
+      <Year>2015</Year>
+      <ul>
+        <Step title={t('erasmusTitle')}>{t('erasmusText')}</Step>
+      </ul>
+      <Divider />
+      <Year>2014</Year>
+      <ul>
+        <Step title={t('intershipTitle')}>{t('intershipText')}</Step>
+      </ul>
+      <Divider />
+      <Year>2011</Year>
+      <ul>
+        <Step title={t('schoolTitle')}>{t('schoolText')}</Step>
+        <Step title={t('universityStartTitle')}>
+          {t('universityStartText')}
+        </Step>
+        <Step title={t('developTitle')}>{t('developText')}</Step>
+      </ul>
+      <Divider />
+      <Year>1998</Year>
+      <ul>
+        <Step title={t('firstPcTitle')}>{t('firstPcText')}</Step>
+      </ul>
+      <Divider />
+      <Year>1993</Year>
+      <ul>
+        <Step title={t('bornTitle')}>{t('bornText')}</Step>
+      </ul>
+    </>
+  );
 
   return (
     <>
@@ -121,52 +96,28 @@ export default function Timeline() {
         <Step title={t('playtomicTitle')}>{t('playtomicText')}</Step>
       </ul>
       <ul>
-        <Step title="Joined BeConcept Studio 🖥️">
-          I accepted a part-time contract with a web agency in Milan, BeConcept
-          Studio. A lot of fun is on the way!
-        </Step>
+        <Step title={t('beconceptTitle')}>{t('beconceptText')}</Step>
       </ul>
       <ul>
-        <Step title="Adios Amaris, Welcome FACEIT 🎮">
-          Certainly the most significant change this year. After almost 4 years,
-          I am leaving amaris, where I was born, to accept a new challenge with
-          FACEIT. Keep up the good work!!
-        </Step>
+        <Step title={t('faceitTitle')}>{t('faceitText')}</Step>
       </ul>
       <Divider />
       <Year>2021</Year>
       <ul>
-        <Step title="Here comes Blue 🐺">
-          A new member joins the pack, a Czechoslovakian wolf pup named Blue.
-        </Step>
-        <Step title="Joined Twin Yield 📈">
-          I joined the team of a startup that creates portfolios of people-based
-          investments with different algorithms. Guess what my role is!
-        </Step>
-        <Step title="Bought my first car 🏎️">
-          Who wants to get around on foot? I don&apos;t. In addition, the heated
-          seats in winter are the top.
-        </Step>
+        <Step title={t('blueTitle')}>{t('blueText')}</Step>
+        <Step title={t('twinYieldTitle')}>{t('twinYieldText')}</Step>
+        <Step title={t('carTitle')}>{t('carText')}</Step>
       </ul>
       <Divider />
       <Year>2020</Year>
       <ul>
-        <Step title="Joined Gymless 💪">
-          The pandemic has also created new opportunities. Gymless becomes a new
-          way to exercise outdoors.
-        </Step>
-        <Step title="Return to San Benedetto 🌊">
-          Remote working becomes the foundation. The time has come for me to
-          return to the sea and breathe fresh air. Thanks for everything Milan.
-        </Step>
+        <Step title={t('gymlessTitle')}>{t('gymlessText')}</Step>
+        <Step title={t('sanBenedettoTitle')}>{t('sanBenedettoText')}</Step>
       </ul>
       <Divider />
       <Year>2019</Year>
       <ul>
-        <Step title="Joined Amaris">
-          It was time for a career change and Amaris called me. I am excited to
-          take on new challenges!
-        </Step>
+        <Step title={t('amarisTitle')}>{t('amarisText')}</Step>
       </ul>
       {isShowingFullTimeline ? (
         <FullTimeline />
@@ -176,7 +127,7 @@ export default function Timeline() {
           className="flex items-center text-sm my-4 mx-auto px-4 py-2 rounded-md font-medium text-gray-900 dark:text-gray-100"
           onClick={() => showFullTimeline(true)}
         >
-          Show more
+          {t('showMore')}
           <svg
             className="h-4 w-4 ml-1"
             xmlns="http://www.w3.org/2000/svg"

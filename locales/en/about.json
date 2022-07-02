@@ -1,7 +1,10 @@
 {
   "aboutMe": "About Me",
-  "text1": "Hi, I'm Luka. I am a fullstack developer. Currently I work at FACEIT as a Senior Software Engineer. I Also collaborate as a freelancer with Fabrick and SourceSense.",
-  "text2": "I grew up in San Benedetto del Tronto and did computer engineering at UNIVPM. In my free time I like to work out, play some video games and spend time with my wolfdog, Blue 🐺.",
+  "showMore": "Show more",
+  "text1": "Hi, this is Luka. I am a fullstack developer. I am currently working at ",
+  "text2": " as a senior software engineer. I also collaborate as a freelancer with ",
+  "text3": " and ",
+  "text4": "I grew up in San Benedetto del Tronto and did computer engineering at UNIVPM. In my free time I like to work out, play some video games and spend time with my wolfdog, Blue 🐺.",
   "playtomicTitle": "Joined Playtomic 🎾",
   "playtomicText": "It was a crazy start to 2022. I went through a lot of selection processes, and in the end I decided to play the game with the role of senior frontend engineer with a winning team, vamos Playtomic!",
   "beconceptTitle": "Joined BeConcept Studio 🖥️",
