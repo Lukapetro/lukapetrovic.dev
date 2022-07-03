@@ -68,6 +68,12 @@ export default function Footer() {
             <a className="text-gray-500 hover:text-gray-600 transition">Tags</a>
           </Link>
         </div>
+        <ExternalLink
+          href="mailto:hi@lukapetrovic.dev"
+          className="text-gray-500 hover:text-gray-600 transition"
+        >
+          hi@lukapetrovic.dev
+        </ExternalLink>
       </div>
     </footer>
   );
