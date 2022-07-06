@@ -1,0 +1,380 @@
+---
+title: "Blockchain Developer: The Beginner's guide"
+publishedAt: '2022-07-06'
+summary: 'Il punto di partenza per il lavoro del futuro.'
+image: '/static/images/blog/tech/blockchainBeginnerGuide/intro_banner.jpg'
+locale: it
+tags:
+  - web3
+  - blockchain
+  - beginners
+---
+
+Oggi voglio parlarvi di quello che secondo me è il miglior path da seguire per imparare a sviluppare [smart contract](https://en.wikipedia.org/wiki/Smart_contract) e [Dapp](https://en.wikipedia.org/wiki/Decentralized_application).
+
+Ricordo quando nel 2016 iniziai a scrivere la tesi su Bitcoin e sulla Blockchain, reperire materiale all’epoca sembrava impossibile. Da paper universitari molto confusionari a post su vari blog e reddit era tutto super caotico e sinceramente molto frustrante.
+
+Dopo svariati anni le cose sono cambiate, ma sembra esserci sempre un velo di incertezza che offusca la strada per questa nuova figura professionale. In questo marasma di caos voglio provare a fare luce e mostrarvi esattamente gli step necessari per diventare Blockchain Developer!
+
+## Topic Overview
+
+Cos’è un Blockchain Developer, esattamente?
+
+Prima di risponde a questa domanda, porterei il focus sulla parola [Blockchain](https://it.wikipedia.org/wiki/Blockchain). Andare a capire cos’è una blockchain, come funziona e perchè si usa è di vitale importanza per continuare.
+
+Brevemente, citando Wikipedia:
+
+> La **_blockchain_** è una [struttura dati](https://it.wikipedia.org/wiki/Struttura_dati) condivisa e "immutabile". È definita come un registro digitale le cui voci sono raggruppate in "blocchi", concatenati in ordine cronologico, e la cui integrità è garantita dall'uso della crittografia. Tali tecnologie sono incluse nella più ampia famiglia dei [registri distribuiti](https://it.wikipedia.org/wiki/Registro_distribuito), ossia sistemi che si basano su un registro distribuito, che può essere letto e modificato da più nodi di una rete.
+
+Per quanto la definizione che abbiamo appena letto possa sembrare banale e semplice, in realtà è molto più articolata e complessa di quel che sembra.
+
+Abbiamo introdotto 2 concetti importanti che vorrei chiarire:
+
+1. Registro distribuito **_(distributed ledger)_** ovvero un **\*\***tipo di database condiviso, replicato e sincronizzato tra i membri di una rete decentralizzata. Questo database registra le transazioni, come lo scambio di beni o dati, tra i partecipanti alla rete.
+
+   Facciamo uno step indietro e vediamo un tipico registro (Ledger) ha questo aspetto:
+
+![ledger](/static/images/blog/tech/blockchainBeginnerGuide/ledger.png)
+
+E’ chiaro che questo Ledger presenta diverse problematiche. E’ inefficiente, costosto e facilmente manipolabile. Manca di trasparenza, inoltre va’ facilmente out-of-sync tra i diversi partecipanti della rete e porta a scelte di business errate.
+
+Ora ci risulta molto più chiaro come la **Blockchain** vada a risolvere i problemi di un classico ledger. Ripetiamo nuovamente la definizione quindi, per essere sicuri di averla compresa bene:
+
+<Aside emoji={'ℹ️'}>
+  Una **blockchain** è un ledger digitale condiviso e a prova di manomissione
+  che registra in modo permanente le transazioni in una rete. Viene distribuito
+  a tutti i membri della rete. Le transazioni vengono registrate in una sequenza
+  di blocchi ( per questo blockchain ) crittografici collegati con un hash.
+</Aside>
+
+Ok forse con l’ultima frase abbiamo aggiunto altra carne sul fuoco 😅.
+
+_“Cos’è questa fantomatica crittografia?? E che significa Hash?? Aiuto, non sto capendo più niente!”_
+
+Calma, calma, vediamo tutto step by step. Vai pure a prendere una tazza di caffè (ne avrai bisogno) e torna quando vuoi.
+
+2. **_Crittografia_** (dal greco [kryptós], "nascosto", e [graphía], "scrittura") ovvero la tecnica di rappresentazione di un messaggio in una forma tale che l'informazione in esso contenuta possa essere recepita solo dal destinatario;
+
+   L’argomento è molto vasto e rischiamo di addentrarci nel buco del coniglio dal quale difficilmente potremmo uscire vivi, ma cerchiamo di capire almeno i concetti di base; Possiamo innanzitutto avere 2 tipologie diverse di crittografia:
+
+   - **Crittografia simmetrica:** i dati vengono crittografati utilizzando una chiave e anche la decodifica viene effettuata utilizzando la stessa chiave.
+   - **Crittografia asimmetrica:** nota anche come crittografia a chiave pubblica. Utilizza chiavi pubbliche e private per criptare e decriptare i dati. Una chiave della coppia che può essere condivisa con tutti è chiamata chiave pubblica. L'altra chiave della coppia, che è tenuta segreta e conosciuta solo dal proprietario, è detta chiave privata. Una delle due chiavi può essere usata per crittografare un messaggio; per decifrarlo si usa la chiave opposta a quella usata per crittografare il messaggio.
+
+Senza addentrarci troppo nei dettagli tecnici della crittografia, per cercare di capirla meglio, vediamo con un’esempio pratico il funzionamento di una transazione nella blockchain di Bitcoin ( ma prima chiariamo un’altro paio di concetti ):
+
+**Cryptographic hash function:** semplicemente una funzione dove diamo un input e otteniamo un output
+
+<Code>
+  @lukapetro→94e939ab5d9a9cf1bbb6d260036f3e7933b884be3e4e15908717054746b09267
+</Code>
+
+Per essere utilizzabile, [questa hash function](https://emn178.github.io/online-tools/sha256.html) deve avere alcune proprietà:
+
+- Lo stesso input restituisce sempre lo stesso output
+- È veloce da calcolare
+- Non è possibile decodificare il "98b0f4b363af4aceb81bc42fd81117e1" che proviene da "Hello Bob" senza ricorrere alla forza bruta (tentativi ed errori).
+- Un piccolo cambiamento nell'input cambierà di molto l'output
+- Non è possibile che due input generino lo stesso output.
+
+**Indirizzo Bitcoin:** Viene generato grazie a [diverse funzioni di hash su una chiave pubblica ECDSA](https://en.bitcoin.it/w/index.php?title=Technical_background_of_version_1_Bitcoin_addresses). Questi indirizzi sono univoci.
+
+Ora che abbiamo capito cosa sono gli hash, la crittografia asimmetrica e sappiamo che possiamo avere più indirizzi bitcoin, vediamo come tutto funziona insieme per formare le transazioni all'interno della blockchain.
+
+### Transazione
+
+Di seguito una transazione di bitcoin da un address a un’altro. Vediamo meglio cosa significa:
+
+![transaction](/static/images/blog/tech/blockchainBeginnerGuide/transaction.png)
+
+Questo screenshot preso dalla [doc ufficiale di Bitcoin](https://bitcoin.org/bitcoin.pdf) ci mostra tutti gli step di 1 singola transazione sulla chain.
+
+Ho usato dei colori per evidenziare meglio i contenuti dello snapshot:
+
+- Il contenuti della casella <HighlightedText color="green-700">Verde</HighlightedText> rappresenta il modo in cui una transazione (Tx) viene firmata
+- Supponiamo di creare una transazione. Gli ingredienti necessari sono:
+
+  - Chiave pubblica della persona alla quale stiamo mandando BTC ( in <HighlightedText color="orange-500">Arancione</HighlightedText> )
+  - La nostra chiave privata ( in <HighlightedText color="blue-600">Blu</HighlightedText> )
+  - L’hash della transazione precendente
+    > Questo è importante perchè il “Proprietario 0” dichiara che noi siamo i possessori di una certo somma di bitcoin, proprio come stiamo facendo noi per il destinatario della nostra transazione
+
+  In questo semplice modo si riesce a verificare con estrema facilità la proprietà. Cioè, la "firma del proprietario 1" è valida ed è stata verificata dalla "chiave pubblica del proprietario 1" e dimostra la catena di proprietà. Si possono verificare tutti i blocchi della chain andando a ritroso.
+
+  _“Tutto chiaro, più o meno, ma se stiamo mandando transazioni sulle chiavi
+  pubbliche, perchè si utilizzano gli address Bitcoin?”_
+
+  Ottima domanda! L'aggiunta degli indirizzi alla chiave pubblica ci dà un ulteriore livello di sicurezza: come abbiamo già visto, un indirizzo è un hash della chiave pubblica, quindi se per qualsiasi motivo ECDSA fosse compromesso (qualcuno può decodificare la chiave privata dalla chiave pubblica e fingere di essere voi) e noi non avessimo ancora speso i nostri bitcoin, il nostro denaro sarebbe ancora al sicuro perché la gente vedrebbe solo l'indirizzo a cui il denaro dovrebbe essere destinato, e non la vera chiave pubblica.
+
+  Finiamo questa overview con un’esempio pratico di una transazione, per poi passare finalmente al succo di questo articolo.
+
+  ```json
+  {
+    "txid": "64317d1c1626ae040ba2cb48b66b8a514320e4415e7d00394bbaa5beff343a3c",
+    "vin": [
+      {
+        "txid": "672aeb1bc62b3941f2e9a530ff6d12e5e70c257632d536d5b0633e12b68a915d",
+        "vout": 1,
+        "scriptSig": {
+          "asm": "3044022066941da0cbe35013d5f92261bb3eeaef9f9729a62dafb1ef1f743cd0fed22f2a02202f3461bcad5c9a80af0f21033de2302563998ffac394d09c14791b285b661014[ALL] 030a13a4fe430d3bf0c1e3ed5ea31e6dad19b56e5c60322a60a283d1d430acddf8"
+        },
+        "addr": "1HKqcNrf3NPuz4s2MdoAzpYYfjYvbbsxZf",
+        "value": 0.0468234
+      },
+      {
+        "txid": "d1dc8deb93ba5a0747c898859db99c03ff5a4f50686716d6c61d757dd5c63b27",
+        "vout": 0,
+        "scriptSig": {
+          "asm": "3044022069d043bcb1401169c8e9ce88c47ebf6b973abba5302efdb44df6801af9f1d79d02202ffad54fecb31edd63c805bb7a7553d77a20ebfce820e8ac198c1898e86ffcfc[ALL] 026ed1317c4a225c461b7dbbca89332f4e2f725fe823f05bd29d4c60da4d5dbd1d"
+        },
+        "addr": "1CMzyZjERPYvecNcn2GDxpHCLqPCwAst3c",
+        "value": 0.0016471
+      }
+    ],
+    "vout": [
+      {
+        "value": "0.03847050",
+        "n": 0,
+        "scriptPubKey": {
+          "asm": "OP_DUP OP_HASH160 1d49a050b1e965f59301f304bc9914378044364e OP_EQUALVERIFY OP_CHECKSIG",
+          "addresses": ["13froCnxWczJNiJXYLQQikWygvyMFXqVUJ"],
+          "type": "pubkeyhash"
+        }
+      },
+      {
+        "value": "0.00775226",
+        "n": 1,
+        "scriptPubKey": {
+          "asm": "OP_DUP OP_HASH160 f362e8796d04713dda1796b3c609d4b7cd325187 OP_EQUALVERIFY OP_CHECKSIG",
+          "addresses": ["1PBugsUY1N3TvikrtDpQBBYuMBFoQWTHXi"],
+          "type": "pubkeyhash"
+        }
+      }
+    ],
+    "valueOut": 0.04622276,
+    "valueIn": 0.0484705,
+    "fees": 0.00224774
+  }
+  ```
+
+In primis troviamo la <HighlightedText color="code">txid</HighlightedText> ovvero un [hash](https://github.com/bitcoin/bitcoin/blob/5961b23898ee7c0af2626c46d5d70e80136578d3/src/primitives/transaction.cpp#L65) ([double sha-256](https://github.com/bitcoin/bitcoin/blob/5961b23898ee7c0af2626c46d5d70e80136578d3/src/hash.h#L21)) in base al contenuto della transazione.
+
+Abbiamo poi <HighlightedText color="code">vin</HighlightedText> e <HighlightedText color="code">vout</HighlightedText>, rispettivamente input e output
+
+Per il <HighlightedText color="code">vin</HighlightedText> abbiamo le seguenti proprietà:
+
+- **txid**, ovvero l’hash della transazione precedente
+- **scriptSig**: la firma della transazione
+- **addr**: indica a chi vengono inviati i bitcoin
+- **value**: numero di bitcoin inviati
+
+Per il <HighlightedText color="code">vout</HighlightedText> vediamo:
+
+- **value**: valore che stiamo inviando
+- **n**: numero di output
+- **scriptPubKey**: contiene il destinatario dell’invio e lo script per verificare chi può consumare l’importo, insieme allo script pubkeyhash. Vi consiglio di vedere [questo video](https://www.youtube.com/watch?v=f9nxuhLSyOg&t=702s) per capire meglio.
+
+Infine abbiamo <HighlightedText color="code">valueIn</HighlightedText>, <HighlightedText color="code">valueOut</HighlightedText> e <HighlightedText color="code">fees</HighlightedText>, ovvere un riepilogo dei valori di ingresso e uscita e la tassa da pagare ai miner per l’elaborazione della transazione.
+
+Per concludere, quello che è successo con questa transazione è:
+
+<Aside emoji={'➡️'}>
+  Riceviamo 0,0468234 + 0,0016471 = 0,0484705 (dagli indirizzi
+  1HKqcNrf3NPuz4s2MdoAzpYfjYvbbsxZf + 1CMzyZjERPYvecNcn2GDxpHCLqPCwAst3c).
+</Aside>
+<br />
+<Aside emoji={'⬅️'}>
+  inviamo 0.0384705 a 13froCnxWczJNiJXYLQQikWygvyMFXqVUJ e
+</Aside>
+<br />
+<Aside emoji={'⬅️'}>
+  inviamo 0,00775226 a 1PBugsUY1N3TvikrtDpQBBYuMBFoQWTHXi.
+</Aside>
+<br />
+<Aside emoji={'💰'}>
+  Stiamo inviando un importo totale di 0,04622276 inferiore all'importo
+  originale
+</Aside>
+<br />
+<Aside emoji={'💸'}>Andremo anche a pagare una fee di 0,00224774.</Aside>
+
+## Steps
+
+A questo punto abbiamo capito cos’è e come funziona una blockchain. Adesso finalmente andiamo a vedere quali sono gli step necessari per diventare blockchain developer:
+
+1. Frontend Development
+2. Backend Development
+3. Solidity Development + Smart Contracts
+4. Unire il puzzle ( web3.js )
+5. Remix
+6. HardHat
+7. Truffle + Ganache
+8. Testing
+
+Ogni singolo step di questa lista potrebbe effettivamente richiedere un capitolo a se per essere spiegato nel dettaglio, ma cerchiamo di non allungare troppo il brodo e farla breve con un recap veloce.
+
+### Frontend Development
+
+Qualsiasi applicazione necessita di un’interfaccia grafica con la quale l’utente può interagire e le Dapps non fanno eccezione.
+
+Qua il mio consiglio è di partire dalle basi, imparando HTML, CSS e Javascript. Una volta masterate queste 3 skill base, consiglio di aggiungere un framework on top (React, Angular, Vue, Svelte etc..). [Qui trovate](https://www.youtube.com/watch?v=EzN4PCZycaM&t=10s) un video con le mie scelte top.
+
+### Backend Development
+
+Direi che il backend è il cuore ( o meglio, il cervello ) della nostra DApp.
+
+Le tecnologie da imparare per questo segmento sono: NodeJS, Express, i DB, HTTP, cosa sono le API.
+
+Prevedo di scrivere un articolo dettagliato in merito, in quanto essendo un argomento molto vasto, merita un approfondimento maggiore.
+
+### Solidity Development + Smart Contracts
+
+Finora tutto abbastanza standard, ma qua il gioco si fa interessante e inizia il vero divertimento.
+
+[Ethereum](https://ethereum.org/en/) è di de-fact la madre di tutti gli smart contract, ovvero non è altro che un software su un network che assicura la replica e l’esecuzione di piccoli programmi chiamati Smart Contracts.
+
+La maggior parte delle applicazioni decentralizzate utilizza la blockchain di Ethereum. E tutte le applicazioni decentralizzate usano gli Smart Contract per eseguire determinate operazioni.
+
+Cerchiamo di capire meglio cos’è uno smart contract con un’esempio pratico:
+
+```solidity
+// Solidity program to
+pragma solidity >= 0.4.16 < 0.7.0;
+
+// Defining a contract
+contract Storage {
+
+    // Declaring state variables
+    uint public setData;
+
+    // set the value of the state variable
+    function set(uint x) public {
+        setData = x;
+    }
+
+    // print the value of state variable
+    function get() public view returns (uint) {
+        return setData;
+    }
+}
+```
+
+Andiamo a vedere singolarmente tutte queste linee di codice:
+
+`pragma solidity >=0.4.16 <0.7.0;`
+
+Questa prima linea di codice indica al compilatore come trattare il codice. Ogni file .sol deve iniziare con la dichiarazione della versione di pragma da utilizzare. Qua stiamo dichiarando che il codice è compatibile con compilatori di versione maggiore uguale di **0.4.16** e minore della **0.7.0**
+
+`contract Storage { }`
+
+La keywork contract dichiara un contratto sotto il quale è incapsulato il codice. In questo caso il nostro contratto si chiamerà Storage.
+
+`uint public setData;`
+
+Come qualsiasi altro linguaggio di programmazione, anche solidity ha le sue variabili. Nel caso di solidity le variabili sono memorizzate in modo permanente nel contratto, quindi scritte nella Blockchain di Ethereum.
+
+La riga uint setData dichiara una variabile di stato chiamata setData di tipo uint (intero senza segno di 256 bit)
+
+`function set(uint x) public`
+
+Questo è una funzione molto banale di nome **set** che semplicemente prende in input un variabile di tipo uint e gli assegna un valore
+
+`function get() public view returns (uint)`
+
+La funzione **get** recupera e stampa il valore della variabile di stato.
+
+Queste 2 funzioni possono essere richiamate da chiunque. Fintanto che qualcuno esegue un nodo della blockchain di Ethereum, questo smart contract sarà accessibile.
+
+Il mio consiglio è quello di iniziare a vedere la [documentazione ufficiale](https://ethereum.org/en/developers/docs/), per poi passare a altre risorse che vi lascio elencate di seguito:
+
+- [https://www.coursera.org/learn/smarter-contracts](https://www.coursera.org/learn/smarter-contracts)
+- [https://www.web3.university/](https://www.web3.university/)
+- [https://cryptozombies.io/](https://cryptozombies.io/)
+- [https://www.youtube.com/c/naderdabit](https://www.youtube.com/c/naderdabit)
+- [https://buildspace.so/](https://buildspace.so/)
+
+### Unire il puzzle ( web3.js )
+
+Molto semplicemente, [web3.js](https://web3js.readthedocs.io/en/v1.7.4/) è una libreria che ci permette di interagire con un node ethereum locale o remoto usando protocolli di comunicazione HTTP, IPC o WebSocket.
+
+Il processo d’installazione è molto semplice, come per qualsiasi altro package lo si può installare trammite **npm** o **yarn**
+
+<HighlightedText color="code">yarn add web3</HighlightedText>
+
+Poi andiamo a creare l’istanza web3 e gli settiamo il provider
+
+```jsx
+const web3 = new Web3(Web3.givenProvider || 'ws://localhost:8545');
+```
+
+E il gioco è fatto. Ora possiamo interagire con la nostro oggetto web3.
+
+Vi lascio [questa guida](https://www.youtube.com/watch?v=t3wM5903ty0) per un maggior approfondimento sulla libreria.
+
+### Remix
+
+[Remix](https://remix.ethereum.org/#optimize=false&runs=200&evmVersion=null) è un IDE web che ci aiuta nello sviluppo di smart contract con Solidity. Non ha bisogno di nessun setup, il che ci permette di iniziare a smanettare con i vari smart contract in tempo 0.
+
+Non solo potete scrivere i primi smart contract, remix permette anche il testing e il deploy semplicemente premendo un bottone.
+
+<Aside emoji={'👉🏼'}>
+  La chiave per diventare un blockchain developer è molto semplice:
+  **sviluppare**.
+</Aside>
+
+Iniziate a costruire le prime DApp per rafforzare i concetti che abbiamo visto finora.
+
+Date un’occhiata a [questo tutorial](https://www.youtube.com/watch?v=xxJfQJ5bMfw) su remix, e [questo tutorial](https://www.youtube.com/watch?v=GKJBEEXUha0) per un NFT marketplace!
+
+PS: incredibile, ma il tutto è completamente gratis!!
+
+### HardHat
+
+Remix è bellissimo, è vero, ma alle volte non basta. Qui torna in gioco il buon vecchio VSCode.
+
+_“Evvai che bello VSCode, ma come facciamo a configurare un ambiente di sviluppo locale su Ethereum??”_
+
+Per questo ci aiuta [HardHat](https://hardhat.org/). HardHat ci fornisce tutto quello di cui abbiamo bisogno per sviluppare i nostri Smart Contracts. Dalla creazione al testing al deploy delle nostre DApp su più chain (Polygon, Ropsten, Mainnet etc..)
+
+Non è male debuggare localmente i nostri smart contract senza doverli pubblicare sulla blockchain pubblica.
+
+### Truffle + Ganache
+
+Chiudiamo in bellezza questa roadmap con questi tool: Truffle e Ganache.
+
+Ma a cosa servono? Semplicemente ci permettono di accelerare ulteriormente lo sviluppo: ci forniscono un ambiente di sviluppo, un framework di test e una pipeline per qualsiasi blockchain EVM (praticamente tutto quello che ci serve)
+
+Nello specifico abbiamo :
+
+- Compilatore di smart contract
+- Scripting
+
+Ganache è incluso in Truffle e ci aiuta per il testing!! Fondamentalmente crea una blockchain simulata con account di test e transazioni e ci risparmia la fatica di configurare il tutto da zero.
+
+Vi consiglio di approfondire nella [docs ufficiale](https://trufflesuite.com/docs/)
+
+### Testing
+
+Una cosa molto particolare della blockchain è che **non è reversibile.**
+
+Questo significa che una volta aggiunto uno smart contract alla blokchain, non può essere modificato. Per questo è molto importante assicurarsi che lo smart contract funzioni correttamente prima di deployarlo, anche perchè questa operazione costa soldi ( le famose gas fee 🤑 ).
+
+Il testing è un topic molto articolato, possiamo suddividerlo in 4 aree:
+
+- Node Testing.
+- Functional Testing.
+- Performance Testing.
+- API Testing.
+
+[Ecco un video](https://www.youtube.com/watch?v=1WZdH3kD1d8&t=2129s) sulle diverse metodologie di testing per la blockchain.
+
+## Conclusione
+
+Grazie a questa guida, non dovete più impazzire cercando a destra e sinistra cosa studiare e quale roadmap seguire per diventare Blockchain Developer. **Avete tutto il necessario per partire!**
+
+Studiare una nuova skill come lo sviluppo di Smart Contract e il Web3.0 può sembrare scoraggiante all’inizio vista la mole di informazioni e di materiale, ma chiunque può riuscirci approcciandosi con la giusta mentalità.
+
+Andare step-by-step è fondamentale in questo caso. Partite dalle basi dello sviluppo, passate da javascript a solidity e concludete con lo sviluppo di DApp all’avanguardia.
+
+Non sarà possibile imparare il tutto con qualche giorno, ma sicuramente con un effort costante, avrete ottime basi solide sulle quali lavorare nel giro di qualche mese :)
+
+Prima di buttarvi a testa bassa nello studio, vi invito a lasciare un breve commento per dirmi di cosa ne pensate di questa guida **Blockchain developer: Beginner’s Guide.** Inoltre, se avete apprezzato, sentitevi liberi di lasciare un like 👍🏻

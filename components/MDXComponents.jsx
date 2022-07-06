@@ -1,5 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Aside from './mdx/Aside';
+import Code from './mdx/Code';
+import HighlightedText from './mdx/HighlightedText';
 
 const CustomLink = (props) => {
   const href = props.href;
@@ -22,7 +25,10 @@ function RoundedImage(props) {
 
 const MDXComponents = {
   Image: RoundedImage,
-  a: CustomLink
+  a: CustomLink,
+  Aside: Aside,
+  HighlightedText: HighlightedText,
+  Code: Code
 };
 
 export default MDXComponents;
