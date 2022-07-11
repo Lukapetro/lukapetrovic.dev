@@ -6,6 +6,7 @@ import KofiButton from '../components/KofiButton';
 import ClapsButton from '../components/ClapsButton';
 import ViewCounter from 'components/ViewCounter';
 import TagsList from 'components/tags/TagsList';
+import CommentSection from '../components/blog/CommentSection';
 
 export default function BlogLayout({ children, post }) {
   return (
@@ -54,6 +55,7 @@ export default function BlogLayout({ children, post }) {
         <ClapsButton slug={post.slug} />
         <KofiButton />
       </div>
+      <CommentSection />
     </Container>
   );
 }
