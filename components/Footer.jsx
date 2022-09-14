@@ -32,7 +32,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-col space-y-4">
           <ExternalLink
-            href="https://www.linkedin.com/in/lucapetro/"
+            href="https://www.linkedin.com/in/lukapetro/"
             className="text-gray-500 hover:text-gray-600 transition"
           >
             Linkedin
